@@ -44,8 +44,8 @@ contract Box{
       orders[materialAddress].delivered = true;
     }
 
-    function getOrder(address orderAddress) returns (address, address){
+    function getOrder(address orderAddress) constant returns (address){
         Order order = orders[orderAddress];
-        return (order.orderedBy, order.suppliedBy);
+        return order.orderedBy;
     }
 }

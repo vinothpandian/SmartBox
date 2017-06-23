@@ -1,0 +1,52 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    color: #001A33;
+    webkit-tap-highlight-color: #222;
+    top:0;
+}
+
+header {
+    position: relative;
+    min-height: auto;
+    text-align: center;
+    color: #001A33;
+    width: 100%;
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 50px 15px;
+    text-align: center;
+    z-index: 2;
+}
+
+#balance, #address{
+  color:#179C7D;
+}
+
+.btn{
+  background-color: #179C7D;
+  color: white;
+}
+
+.btn:hover{
+  background-color: #1DC39C;
+  border: 1px solid white;
+}
+
+.transferBox{
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+}
+
+.navbar{
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
