@@ -2,10 +2,17 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './app/javascripts/app.js',
+  entry: [
+    './app/javascripts/app.js'
+  ],
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'app.js'
+  },
+  devServer:{
+    inline: true,
+    contentBase: path.join(__dirname, "build"),
+    port: 8090
   },
   plugins: [
     // Copy our app's index.html to the build folder.
@@ -14,23 +21,24 @@ module.exports = {
     ])
   ],
   module: {
-    rules: [
-      {
-       test: /\.css$/,
-       use: [ 'style-loader', 'css-loader' ]
-      }
-    ],
     loaders: [
-      { test: /\.json$/, use: 'json-loader' },
       {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015'],
-          plugins: ['transform-runtime']
+          plugins: ['transform-runtime'],
+          presets: ['react','es2015']
         }
+      },
+      {
+        test: /\.scss$/,
+        loader: ['css-loader','style-loader','sass-loader']
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=20000'
       }
     ]
   }
-}
+};
