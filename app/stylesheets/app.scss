@@ -6,6 +6,7 @@
  * Based on Bootstrap
 */
 
+@import "~bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 // Reassign color vars to semantic color scheme
@@ -15,11 +16,11 @@ $brand-info:                #7BBCE7;
 $brand-warning:             #F7BE65;
 $brand-danger:              #EF8A80;
 $brand-inverse:             #95A5A6;
- 
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
- 
+
 $enable-rounded:            true !default;
 $enable-shadows:            false;
 
