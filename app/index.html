@@ -1,115 +1,43 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
 </head>
-<body class="text-gray-dark h-100">
 
+<body class="text-gray-dark h-100">
   <div class="section text-center bg-info py-5 opaque opaque-fade-out">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                  <h1 class="text-white">Inventory Manager</h1>
-                  <p class="lead text-muted">Manage your tool inventory and orders</p>
-              </div>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-white display-3">Inventory Manager</h1>
+          <h4 class="text-white">Manage your tool inventory and orders</h4>
+        </div>
       </div>
+    </div>
   </div>
   <nav class="navbar navbar-expand-md text-center bg-primary navbar-inverse">
-      <div class="container">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-          <div class="collapse navbar-collapse text-center justify-content-center" id="navbar2SupportedContent">
-          </div>
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar2SupportedContent" style="font-size:1.2rem">
       </div>
+    </div>
   </nav>
-  <div class="mx-auto p-5">
-      <div class="container">
-          <div class="row mx-auto bg-faded p-5 rounded w-100">
-              <div class="text-center p-0 m-0 col-md-3" id="menu">
+  <div class="mx-auto p-5 wrapper">
+    <div class="container">
+      <div class="row mx-auto bg-faded p-5 rounded w-100">
+        <div class="text-center p-0 m-0 col-md-3" id="menu">
+        </div>
+        <div class="col-md-9" id="toolForm">
+        </div>
 
-              </div>
-              <div class="col-md-9">
-                  <div class="card rounded">
-                      <div class="card-block">
-                          <h4 class="card-title">Tools in your Invetory</h4>
-                      </div>
-                      <table class="table table-hover mx-auto w-90">
-                          <thead>
-                              <tr>
-                                  <th>#</th>
-                                  <th>Tool Name</th>
-                                  <th>Tool ID</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>Wire (5m)</td>
-                                  <td class="">0xac60e905167f51a083f252f36abcdef123456789</td>
-                                  <td class="">
-                                      <a href="#" class="btn btn-outline-danger m-0 btn-sm p-1">X</a>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>Wire (5m)</td>
-                                  <td>0xac60e905167f51a083f252f36abcdef123456789</td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>Wire (5m)</td>
-                                  <td>0xac60e905167f51a083f252f36abcdef123456789</td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>Wire (5m)</td>
-                                  <td>0xac60e905167f51a083f252f36abcdef123456789</td>
-                              </tr>
-                              <tr>
-                                  <td>5</td>
-                                  <td>Wire (5m)</td>
-                                  <td>0xac60e905167f51a083f252f36abcdef123456789</td>
-                              </tr>
-                              <tr>
-                                  <td>6</td>
-                                  <td>Wire (5m)</td>
-                                  <td>0xac60e905167f51a083f252f36abcdef123456789</td>
-                              </tr>
-                              <tr>
-                                  <td>7</td>
-                                  <td>Wire (5m)</td>
-                                  <td>0xac60e905167f51a083f252f36abcdef123456789</td>
-                              </tr>
-                              <tr>
-                                  <td>8</td>
-                                  <td>Wire (5m)</td>
-                                  <td>0xac60e905167f51a083f252f36abcdef123456789</td>
-                              </tr>
-                              <tr>
-                                  <td>9</td>
-                                  <td>Wire (5m)</td>
-                                  <td>0xac60e905167f51a083f252f36abcdef123456789</td>
-                              </tr>
-                          </tbody>
-                      </table>
-                  </div>
-              </div>
-          </div>
       </div>
+      <div id="alertUser" class="text-center"></div>
+    </div>
   </div>
-  <div class="py-5 bg-primary text-center opaque">
-      <div class="container">
-          <div class="row"></div>
-      </div>
-  </div>
-    <div class="display-4" id="react-container"></div>
-    <script type="text/javascript" src="./app.js">
-    // <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="./app.js"></script>
 </body>
 
 </html>

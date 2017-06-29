@@ -1,29 +1,17 @@
-import React, {PropTypes} from "react";
-const ToolManager = require('../ToolManager');
+import React, { PropTypes } from 'react'
 
-class InventoryList extends React.Component {
-
-  componentDidMount() {
-    ToolManager.start()
-    ToolManager.getNoOfToolsAvailable()
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    ToolManager.getNoOfToolsAvailable()
-  }
-
-  render() {
-    return (
-      <div className="card rounded">
+class PendingOrders extends React.Component {
+  render () {
+    return(<div className="card rounded">
       <div className="card-block">
-        <h4 className="card-title">There are <span className="text-muted" id="noOfTools"></span> tools in your inventory</h4>
+        <h4 className="card-title">Pending orders</h4>
       </div>
       <table className="table table-hover mx-auto w-90">
         <thead>
           <tr>
             <th>#</th>
             <th>Tool Name</th>
-            <th>Tool ID</th>
+            <th>Order from</th>
           </tr>
         </thead>
         <tbody>
@@ -31,9 +19,10 @@ class InventoryList extends React.Component {
             <td>1</td>
             <td>Wire (5m)</td>
             <td className>0xac60e905167f51a083f252f36abcdef123456789</td>
-            <td className>
-              <a href="#" className="btn btn-outline-danger m-0 btn-sm p-1">
-                X
+            <td className="m-0 p-0 text-center">
+              <a href="#" className="btn btn-outline-default">
+                <br />
+                <i className="fa fa-fw fa-check-square-o" />
               </a>
             </td>
           </tr>
@@ -79,9 +68,8 @@ class InventoryList extends React.Component {
           </tr>
         </tbody>
       </table>
-    </div>
-  )
+    </div>)
   }
 }
 
-module.exports = InventoryList;
+module.exports = PendingOrders;

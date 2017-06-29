@@ -7,7 +7,7 @@ class Navigation extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {page: 'tools'};
+    this.state = {page: 'tools', sublink: 'inventoryList'};
 
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
@@ -23,6 +23,10 @@ class Navigation extends React.Component {
   isActive(link) {
     var temp = this.state.page == link ? "active" : " "
     return temp
+  }
+
+  switchSubLink(){
+    console.log("LOl");
   }
 
   componentDidMount() {
@@ -44,7 +48,6 @@ class Navigation extends React.Component {
   }
 
   render() {
-
     return (
       <ul className="navbar-nav">
           <li className={"nav-item "+ this.isActive("tools")}>

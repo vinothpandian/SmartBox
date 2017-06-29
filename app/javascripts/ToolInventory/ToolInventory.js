@@ -1,10 +1,18 @@
 const React = require('react');
+var ReactDOM = require('react-dom');
+
+const InventoryList = require('./InventoryList');
+const AddTool = require('./AddTool');
+const AddScannedTools = require('./AddScannedTools');
+const RemoveTool = require('./RemoveTool');
+
 
 class ToolInventory extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {page: 'inventoryList'};
+    var temp = localStorage.getItem('page') == null ? 'inventoryList' : localStorage.getItem('page')
+    this.state = {page: temp};
 
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
@@ -12,6 +20,7 @@ class ToolInventory extends React.Component {
 
   handleClick(event) {
     var link
+    localStorage.setItem('page',event.target.id)
     this.setState({
       page: event.target.id
     });
@@ -20,6 +29,43 @@ class ToolInventory extends React.Component {
   isActive(link) {
     var temp = this.state.page == link ? "active" : " "
     return temp
+  }
+
+  loadRelevantPage() {
+    switch (this.state.page) {
+      case "inventoryList":
+        ReactDOM.render(
+          <InventoryList />,
+          document.getElementById("toolForm")
+        );
+        break;
+      case "addTool":
+        ReactDOM.render(
+          <AddTool />,
+          document.getElementById("toolForm")
+        );
+        break;
+      case "addScannedTools":
+        ReactDOM.render(
+          <AddScannedTools />,
+          document.getElementById("toolForm")
+        );
+        break;
+      case "removeTool":
+        ReactDOM.render(
+          <RemoveTool />,
+          document.getElementById("toolForm")
+        );
+        break;
+    }
+  }
+
+  componentDidMount() {
+    this.loadRelevantPage()
+  }
+
+  componentDidUpdate() {
+    this.loadRelevantPage()
   }
 
   render() {
