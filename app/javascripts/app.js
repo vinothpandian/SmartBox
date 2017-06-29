@@ -13,5 +13,3 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var Navigation = require('./Navigation')
-
-$("#alertBox").hide();

@@ -5,7 +5,7 @@ class AddTool extends React.Component {
 
   getRFID() {
     fetch("http://localhost:8080/rfid").then((resp) => resp.json()).then(function(data) {
-      document.getElementById("toolAddress").value = data[data.length-1].cardUID
+      document.getElementById("toolAddress").value = web3.sha3(data[data.length-1].cardUID)
     });
   }
 
