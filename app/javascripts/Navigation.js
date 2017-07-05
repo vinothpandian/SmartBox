@@ -51,10 +51,7 @@ class Navigation extends React.Component {
     return (
       <ul className="navbar-nav">
           <li className={"nav-item "+ this.isActive("tools")}>
-            <a className="nav-link" id="tools" onClick={this.handleClick}>Tools</a>
-          </li>
-          <li className={"nav-item "+ this.isActive("orders")}>
-              <a className="nav-link" id="orders" onClick={this.handleClick}>Orders</a>
+            <a className="nav-link" id="tools" onClick={this.handleClick}>Manage your tool inventory</a>
           </li>
       </ul>
     );
