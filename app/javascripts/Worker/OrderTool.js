@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
-const ToolManager = require('./ToolManager');
+const Worker = require('./Worker');
 
-class AddTool extends React.Component {
+class OrderTool extends React.Component {
 
   getRFID() {
     fetch("http://localhost:8080/rfid").then((resp) => resp.json()).then(function(data) {
@@ -9,30 +9,30 @@ class AddTool extends React.Component {
     });
   }
 
-  addTool(event) {
+  orderTool(event) {
     event.preventDefault()
-    ToolManager.start()
+    Worker.start()
     var toolName = document.getElementById("toolName").value
     var toolAddress = document.getElementById("toolAddress").value
     if (!toolName || !toolAddress || toolName=="" || toolAddress=="") {
       alert("Please fill the Tool name and Tool address")
     } else {
-      ToolManager.addTool(toolName, toolAddress)
+      Worker.orderTool(toolName, toolAddress)
     }
   }
 
   render () {
     return(<div className="card rounded">
       <div className="card-block">
-        <h4 className="card-title">Add tool</h4>
-        <form className onSubmit={this.addTool}>
+        <h4 className="card-title">Order tool</h4>
+        <form className onSubmit={this.orderTool}>
           <div className="form-group">
-            <label>Tool name</label>
+            <label>Tool Supplier Address</label>
             <input
               type="text"
               className="form-control"
               id="toolName"
-              placeholder="eg. Wire (5m)"
+              placeholder="eg. 0xbd60e3457851a083f252f36..........."
             />
           </div>
           <fieldset className="form-group">
@@ -56,7 +56,7 @@ class AddTool extends React.Component {
             </small>
           </fieldset>
           <button type="submit" className="btn btn-primary">
-            Add Tool
+            Order Tool
           </button>
         </form>
       </div>
@@ -64,4 +64,4 @@ class AddTool extends React.Component {
   }
 }
 
-module.exports =  AddTool;
+module.exports =  OrderTool;

@@ -1,5 +1,5 @@
 import {default as contract} from 'truffle-contract';
-import artifact from '../../build/contracts/ToolSupplier.json';
+import artifact from '../../../build/contracts/ToolSupplier.json';
 
 var ToolSupplier = contract(artifact);
 
@@ -12,6 +12,7 @@ var ToolManager = {
 
   address: null,
   availableTools: null,
+  toolSupplierAddress: null,
 
   start: function() {
     var self = this;

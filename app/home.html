@@ -4,6 +4,11 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+    window.onload = function() {
+      localStorage.removeItem('page');
+    };
+  </script>
 </head>
 
 <body class="text-gray-dark h-100">
@@ -29,14 +34,17 @@
   <div class="mx-auto p-5 wrapper">
     <div class="container">
       <div class="row mx-auto bg-faded p-5 rounded w-100">
-        <div class="text-center p-0 m-0 col-md-3" id="menu">
+        <div class="col-md-12">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="btn btn-info" href="inventory.html">Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-success" href="worker.html">Worker</a>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-9" id="toolForm">
-          
-        </div>
-
       </div>
-      <div id="alertUser" class="text-center"></div>
     </div>
   </div>
 </body>

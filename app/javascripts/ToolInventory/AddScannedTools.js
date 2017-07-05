@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-const ToolManager = require('../ToolManager');
+const ToolManager = require('./ToolManager');
 
 class AddScannedTools extends React.Component {
 

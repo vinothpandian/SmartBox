@@ -7,7 +7,7 @@ const AddScannedTools = require('./AddScannedTools');
 const RemoveTool = require('./RemoveTool');
 
 
-class ToolInventory extends React.Component {
+class InventoryManager extends React.Component {
 
   constructor(props) {
     super(props);
@@ -72,22 +72,22 @@ class ToolInventory extends React.Component {
     return (
       <ul className="nav nav-pills flex-column">
         <li className="nav-item">
-          <a className={"nav-link "+ this.isActive("inventoryList")} id="inventoryList" onClick={this.handleClick} href="#">
+          <a className={"nav-link "+ this.isActive("inventoryList")} id="inventoryList" onClick={this.handleClick} >
             Tools in Inventory
           </a>
         </li>
         <li className="nav-item">
-          <a className={"nav-link "+ this.isActive("addTool")} id="addTool" onClick={this.handleClick} href="#">
+          <a className={"nav-link "+ this.isActive("addTool")} id="addTool" onClick={this.handleClick}>
             Add tool
           </a>
         </li>
         <li className="nav-item">
-          <a className={"nav-link "+ this.isActive("addScannedTools")} id="addScannedTools" onClick={this.handleClick} href="#">
+          <a className={"nav-link "+ this.isActive("addScannedTools")} id="addScannedTools" onClick={this.handleClick}>
             Add scanned tools
           </a>
         </li>
         <li className="nav-item">
-        <a className={"nav-link "+ this.isActive("removeTool")} id="removeTool" onClick={this.handleClick} href="#">
+        <a className={"nav-link "+ this.isActive("removeTool")} id="removeTool" onClick={this.handleClick}>
           Remove tool
         </a>
       </li>
@@ -96,4 +96,7 @@ class ToolInventory extends React.Component {
   }
 }
 
-module.exports = ToolInventory
+ReactDOM.render(
+  <InventoryManager />,
+  document.getElementById("menu")
+);

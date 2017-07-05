@@ -1,24 +1,64 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var package = require('./package.json');
+var webpack = require('webpack');
 
 module.exports = {
-    entry: ['./app/javascripts/app.js'],
+    entry: {
+      app:  './app/javascripts/app.js',
+      inventory: './app/javascripts/inventory.js',
+      vendor: Object.keys(package.dependencies),
+      worker: './app/javascripts/worker.js'
+    },
     output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'app.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js'
     },
     devServer: {
         inline: true,
-        contentBase: path.join(__dirname, "build"),
-        port: 8090
+        contentBase: path.join(__dirname, 'dist'),
+        port: 8086
     },
-    plugins: [// Copy our app's index.html to the build folder.
-        new CopyWebpackPlugin([
-            {
-                from: './app/index.html',
-                to: "index.html"
-            }
-        ])
+    plugins: [// Use template of our app's index.html and generate new index.html in the build folder.
+        new HtmlWebpackPlugin({
+            hash: true,
+            title: 'SmartBox',
+            tagLine: 'A Smart Replenishment Box',
+            color: 'bg-danger',
+            template: './app/home.html',
+            chunks: ['app','vendor'],
+            filename: './index.html' //relative to root of the application
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            title: 'Inventory Manager',
+            tagLine: 'Manage your tool inventory',
+            color: 'bg-info',
+            template: './app/index.html',
+            chunks: ['app','vendor', 'inventory'],
+            filename: './inventory.html' //relative to root of the application
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            title: 'Order Manager',
+            tagLine: 'Order your tools!',
+            color: 'bg-success',
+            template: './app/index.html',
+            chunks: ['app','vendor', 'worker'],
+            filename: './worker.html' //relative to root of the application
+        }),
+        new webpack.ProvidePlugin({
+          $: "jquery",
+          jquery: "jquery",
+          "window.jQuery": "jquery",
+          jQuery:"jquery"
+        }),
+        new webpack.ProvidePlugin({
+          $: "tether",
+          tether: "tether",
+          "window.Tether": "tether",
+          Tether:"tether"
+        })
     ],
     module: {
         rules : [

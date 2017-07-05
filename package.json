@@ -1,7 +1,7 @@
 {
-  "name": "reactry",
+  "name": "SmartBox",
   "version": "1.0.0",
-  "description": "react initial trial",
+  "description": "A Smart Replenishment Box - Project for Fraunhofer - Sankt Augustin Lab, Summer Semester 2017",
   "main": "app.js",
   "scripts": {
     "build": "webpack",
@@ -12,7 +12,7 @@
     "webpack",
     "react"
   ],
-  "author": "Vinoth",
+  "author": "Vinoth Pandian Sermuga Pandian",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -25,6 +25,7 @@
     "expose-loader": "^0.7.3",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.29.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
@@ -35,10 +36,8 @@
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
-    "babel-runtime": "^6.23.0",
-    "bootstrap": "^4.0.0-alpha.6",
-    "es2015": "0.0.0",
     "jquery": "^3.2.1",
+    "bootstrap": "^4.0.0-alpha.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   }
