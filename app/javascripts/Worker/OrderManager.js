@@ -1,9 +1,11 @@
 const React = require('react');
 var ReactDOM = require('react-dom');
 
-const OrderTool = require('./OrderTool');
-const Worker = require('./Worker');
 const BorrowedTools = require('./BorrowedTools');
+const TakeToolFromBox = require('./TakeToolFromBox');
+const PutToolToBox = require('./PutToolToBox');
+const OrderTool = require('./OrderTool');
+const ReturnTool = require('./ReturnTool');
 const AddToBox = require('./AddToBox');
 
 
@@ -15,7 +17,6 @@ class OrderManager extends React.Component {
       var temp = localStorage.getItem('page') == null ? 'borrowedToolsList' : localStorage.getItem('page')
       this.state = {page: temp};
 
-      Worker.start()
       // This binding is necessary to make `this` work in the callback
       this.handleClick = this.handleClick.bind(this);
     }
@@ -41,9 +42,27 @@ class OrderManager extends React.Component {
             document.getElementById("toolForm")
           );
           break;
+        case "takeToolFromBox":
+          ReactDOM.render(
+            <TakeToolFromBox />,
+            document.getElementById("toolForm")
+          );
+          break;
+        case "putToolToBox":
+          ReactDOM.render(
+            <PutToolToBox />,
+            document.getElementById("toolForm")
+          );
+          break;
         case "orderTool":
           ReactDOM.render(
             <OrderTool />,
+            document.getElementById("toolForm")
+          );
+          break;
+        case "returnTool":
+          ReactDOM.render(
+            <ReturnTool />,
             document.getElementById("toolForm")
           );
           break;
@@ -53,12 +72,6 @@ class OrderManager extends React.Component {
             document.getElementById("toolForm")
           );
           break;
-        // case "removeTool":
-        //   ReactDOM.render(
-        //     <RemoveTool />,
-        //     document.getElementById("toolForm")
-        //   );
-        //   break;
       }
     }
 
@@ -72,15 +85,30 @@ class OrderManager extends React.Component {
 
     render() {
       return (
-        <ul className="nav nav-pills flex-column">
+        <ul className="nav nav-pills flex-column text-left bordered rounded">
           <li className="nav-item">
             <a className={"nav-link "+ this.isActive("borrowedToolsList")} id="borrowedToolsList" onClick={this.handleClick} >
               Borrowed Tools
             </a>
           </li>
           <li className="nav-item">
+            <a className={"nav-link "+ this.isActive("takeToolFromBox")} id="takeToolFromBox" onClick={this.handleClick}>
+              Take tool from Box
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className={"nav-link "+ this.isActive("putToolToBox")} id="putToolToBox" onClick={this.handleClick}>
+              Put tool to Box
+            </a>
+          </li>
+          <li className="nav-item">
             <a className={"nav-link "+ this.isActive("orderTool")} id="orderTool" onClick={this.handleClick}>
               Order tool
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className={"nav-link "+ this.isActive("returnTool")} id="returnTool" onClick={this.handleClick}>
+              Return tool
             </a>
           </li>
           <li className="nav-item">

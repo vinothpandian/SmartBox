@@ -1,16 +1,16 @@
 import React, { PropTypes } from 'react'
-const Worker = require('./Worker');
+const Worker = require('./WorkerContract');
 
 class BorrowedTools extends React.Component {
 
   componentDidMount() {
     Worker.start()
-    Worker.assignedBox()
+    Worker.getNoOfOrderedTools()
     Worker.getNoOfBorrowedTools()
   }
 
   componentDidUpdate(prevProps, prevState) {
-    Worker.getBoxValue()
+    Worker.getNoOfOrderedTools()
     Worker.getNoOfBorrowedTools()
   }
 
@@ -18,7 +18,10 @@ class BorrowedTools extends React.Component {
     return (
       <div className="card rounded">
         <div className="card-block">
-          <h4 className="card-title">You have borrowed <span className="text-muted" id="noOfTools"></span> tools</h4>
+          <h4 className="card-title">You have ordered <span className="text-muted" id="noOfOrderedTools"></span> tools</h4>
+        </div>
+        <div className="card-block">
+          <h4 className="card-title">You have borrowed <span className="text-muted" id="noOfBorrowedTools"></span> tools</h4>
         </div>
       </div>
     )

@@ -1,11 +1,7 @@
 const React = require('react');
 var ReactDOM = require('react-dom');
 
-const InventoryList = require('./InventoryList');
-const AddTool = require('./AddTool');
-const AddScannedTools = require('./AddScannedTools');
-const RemoveTool = require('./RemoveTool');
-
+const BoxInventory = require('./BoxInventory');
 
 class InventoryManager extends React.Component {
 
@@ -35,28 +31,28 @@ class InventoryManager extends React.Component {
     switch (this.state.page) {
       case "inventoryList":
         ReactDOM.render(
-          <InventoryList />,
+          <BoxInventory />,
           document.getElementById("toolForm")
         );
         break;
-      case "addTool":
-        ReactDOM.render(
-          <AddTool />,
-          document.getElementById("toolForm")
-        );
-        break;
-      case "addScannedTools":
-        ReactDOM.render(
-          <AddScannedTools />,
-          document.getElementById("toolForm")
-        );
-        break;
-      case "removeTool":
-        ReactDOM.render(
-          <RemoveTool />,
-          document.getElementById("toolForm")
-        );
-        break;
+      // case "addTool":
+      //   ReactDOM.render(
+      //     <AddTool />,
+      //     document.getElementById("toolForm")
+      //   );
+      //   break;
+      // case "addScannedTools":
+      //   ReactDOM.render(
+      //     <AddScannedTools />,
+      //     document.getElementById("toolForm")
+      //   );
+      //   break;
+      // case "removeTool":
+      //   ReactDOM.render(
+      //     <RemoveTool />,
+      //     document.getElementById("toolForm")
+      //   );
+      //   break;
     }
   }
 
@@ -73,24 +69,9 @@ class InventoryManager extends React.Component {
       <ul className="nav nav-pills flex-column text-left bordered rounded">
         <li className="nav-item">
           <a className={"nav-link "+ this.isActive("inventoryList")} id="inventoryList" onClick={this.handleClick} >
-            Tools in Inventory
+            Tools in Box
           </a>
         </li>
-        <li className="nav-item">
-          <a className={"nav-link "+ this.isActive("addTool")} id="addTool" onClick={this.handleClick}>
-            Add tool
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className={"nav-link "+ this.isActive("addScannedTools")} id="addScannedTools" onClick={this.handleClick}>
-            Add scanned tools
-          </a>
-        </li>
-        <li className="nav-item">
-        <a className={"nav-link "+ this.isActive("removeTool")} id="removeTool" onClick={this.handleClick}>
-          Remove tool
-        </a>
-      </li>
     </ul>
     );
   }

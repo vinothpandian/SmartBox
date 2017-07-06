@@ -1,4 +1,5 @@
 pragma solidity ^0.4.8;
+
 import "./Box.sol";
 
 contract Worker {
@@ -9,6 +10,8 @@ contract Worker {
 
   mapping (address => bool) borrowedTools;
   uint noOfBorrowedTools;
+  uint noOfOrderedTools;
+
 
   modifier isWorkerAssignedToABox() {
     if(!boxAssigned){throw;} _;
@@ -19,46 +22,46 @@ contract Worker {
     boxAssigned = true;
   }
 
-  function orderTSTAtool(address toolSupplier, address toolAddress)
-  isWorkerAssignedToABox(){
-    box.orderTool(toolSupplier, toolAddress);
-    borrowedTools[toolAddress] = true;
-    noOfBorrowedTools++;
-    isTheToolOrdered(toolSupplier, toolAddress, address(box));
-  }
-
-  function orderMaterial(address materialSupplier, address materialAddress)
-  isWorkerAssignedToABox(){
-    box.orderMaterial(materialSupplier, materialAddress);
-  }
-
-  function getTool(address toolAddress)
-  isWorkerAssignedToABox(){
-      borrowedTools[toolAddress] = false;
-      box.obtainTool(toolAddress);
-  }
-
-  function getMaterial(address materialAddress)
-  isWorkerAssignedToABox(){
-      box.obtainMaterial(materialAddress);
-  }
-
-  function returnTool(address toolAddress)
-  isWorkerAssignedToABox(){
-    delete borrowedTools[toolAddress];
-    noOfBorrowedTools--;
-  }
-
   function getNoOfBorrowedTools() constant returns (uint)
   {
     return noOfBorrowedTools;
   }
 
-  function toolAvailable(address toolAddress) constant returns (bool) {
-    return borrowedTools[toolAddress];
+  function getNoOfOrderedTools() constant returns (uint)
+  {
+    return noOfOrderedTools;
   }
 
   function assignedBox() constant returns (address) {
     return address(box);
   }
+
+  function orderTool(address toolSupplier, address toolAddress)
+  isWorkerAssignedToABox(){
+    box.orderTool(toolSupplier, toolAddress);
+    noOfOrderedTools++;
+    isTheToolOrdered(toolSupplier, toolAddress, address(box));
+  }
+
+  function getToolFromBox(address toolAddress)
+  isWorkerAssignedToABox(){
+      box.obtainTool(toolAddress);
+      borrowedTools[toolAddress] = true;
+      noOfBorrowedTools++;
+  }
+
+  function putToolInBox(address toolAddress)
+  isWorkerAssignedToABox(){
+      box.putTool(toolAddress);
+      borrowedTools[toolAddress] = false;
+      noOfBorrowedTools--;
+  }
+
+  function returnTool(address toolSupplier, address toolAddress)
+  isWorkerAssignedToABox(){
+    box.returnTool(toolSupplier, toolAddress);
+    noOfOrderedTools--;
+    delete borrowedTools[toolAddress];
+  }
+
 }

@@ -1,10 +1,9 @@
-Box: 0x5cb9aed967c3c1e20375e230267aad5dbd4dbd84
-
-  ToolSupplier: 0x0e1c308b8322392f30c8958d77f7b47a9fe86ee8
-
-  MaterialSupplier: 0xac00ec65ab6778ad75408f32b44a9dda05d0bb66
-
-  Worker: 0xde06399dd30deccd7497ddbd83e488b7b9a5b448
+Replacing Box...
+  Box: 0x4e0dfa93f6dee6f9dc832a4c4395bdce41fd5321
+  Replacing ToolSupplier...
+  ToolSupplier: 0x53a34090add2953a253ed8b70e1aafd3ffcde71f
+  Replacing Worker...
+  Worker: 0xfe409305803c63b3df9bd5d40e81d5847ce4fe49
 
 Worker.deployed().then(function(i){w=i})
 ,

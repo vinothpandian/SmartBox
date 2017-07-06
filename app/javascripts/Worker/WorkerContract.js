@@ -40,26 +40,68 @@ var WorkerManager = {
     return true
   },
 
+  takeToolFromBox: function(toolAddress) {
+    var self = this;
+
+    alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
+
+    Worker.deployed().then(function(instance) {
+      return instance.getToolFromBox(toolAddress, {from: self.address});
+    }).then(function() {
+      alertUser("success","<strong>Transaction success!!</strong>")
+    }).catch(function(e) {
+      console.log(e);
+      alertUser("danger","<strong>Error adding Worker to Box!!</strong> Check logs!")
+    });
+  },
+
+  putToolToBox: function(toolAddress) {
+    var self = this;
+
+    alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
+
+    Worker.deployed().then(function(instance) {
+      return instance.putToolInBox(toolAddress, {from: self.address});
+    }).then(function() {
+      alertUser("success","<strong>Transaction success!!</strong>")
+    }).catch(function(e) {
+      console.log(e);
+      alertUser("danger","<strong>Error adding Worker to Box!!</strong> Check logs!")
+    });
+  },
+
   orderThisTool: function(toolSupplierAddress, toolAddress) {
     var self = this;
 
     alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
 
     Worker.deployed().then(function(instance) {
-      console.log(instance.assignedBox.call(self.address, {from: self.address}));
-      return instance.orderTSTAtool(toolSupplierAddress, toolAddress, {from: self.address});
+      return instance.orderTool(toolSupplierAddress, toolAddress, {from: self.address});
     }).then(function(result) {
-      console.log(result);
-      alertUser("success","<strong>Transaction success!!</strong>")
       for (var i = 0; i < result.logs.length; i++) {
         var log = result.logs[i];
 
         if (log.event == "isTheToolOrdered") {
           // We found the event!
-          console.log("tx success");
+          alertUser("success","<strong>Transaction success!!</strong>")
           break;
         }
       }
+    }).catch(function(e) {
+      console.log(e);
+      alertUser("danger","<strong>Error adding tool!!</strong> Check logs!")
+    });
+  },
+
+  returnThisTool: function(toolSupplierAddress, toolAddress) {
+    var self = this;
+
+    alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
+
+    Worker.deployed().then(function(instance) {
+      return instance.returnTool(toolSupplierAddress, toolAddress, {from: self.address});
+    }).then(function(result) {
+      alertUser("success","<strong>Transaction success!!</strong>")
     }).catch(function(e) {
       console.log(e);
       alertUser("danger","<strong>Error adding tool!!</strong> Check logs!")
@@ -72,7 +114,6 @@ var WorkerManager = {
     alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
 
     Worker.deployed().then(function(instance) {
-      console.log(instance.assignedBox.call());
       return instance.addWorkerToBox(boxAddress, {from: self.address});
     }).then(function() {
       alertUser("success","<strong>Transaction success!!</strong>")
@@ -88,23 +129,23 @@ var WorkerManager = {
     Worker.deployed().then(function(instance) {
       return instance.getNoOfBorrowedTools.call(self.address, {from: self.address});
     }).then(function(value) {
-      document.getElementById("noOfTools").innerHTML = value.valueOf()
+      document.getElementById("noOfBorrowedTools").innerHTML = value.valueOf()
     }).catch(function(e) {
       console.log(e);
       alertUser("danger", '<strong>Error!</strong> Could not get the number of borrowed tools. Check logs!')
     });
   },
 
-  assignedBox: function() {
+  getNoOfOrderedTools: function() {
     var self = this;
 
     Worker.deployed().then(function(instance) {
-      return instance.assignedBox.call(self.address, {from: self.address});
+      return instance.getNoOfOrderedTools.call(self.address, {from: self.address});
     }).then(function(value) {
-      console.log(value.valueOf());
+      document.getElementById("noOfOrderedTools").innerHTML = value.valueOf()
     }).catch(function(e) {
       console.log(e);
-      alertUser("danger", '<strong>Error!</strong> Could not get the number of borrowed tools. Check logs!')
+      alertUser("danger", '<strong>Error!</strong> Could not get the number of ordered tools. Check logs!')
     });
   },
 

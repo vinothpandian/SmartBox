@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-const Worker = require('./Worker');
+const Worker = require('./WorkerContract');
 
 class AddToBox extends React.Component {
 

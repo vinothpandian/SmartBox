@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 const Worker = require('./WorkerContract');
 
-class OrderTool extends React.Component {
+class ReturnTool extends React.Component {
 
   getRFID() {
     fetch("http://localhost:8080/rfid").then((resp) => resp.json()).then(function(data) {
@@ -9,7 +9,7 @@ class OrderTool extends React.Component {
     });
   }
 
-  orderTool(event) {
+  returnTool(event) {
     event.preventDefault()
     Worker.start()
     var toolSupplierAddress = document.getElementById("toolSupplierAddress").value
@@ -17,15 +17,15 @@ class OrderTool extends React.Component {
     if (!toolSupplierAddress || !toolAddress || toolSupplierAddress=="" || toolAddress=="") {
       alert("Please fill the Tool supplier address and Tool address")
     } else {
-      Worker.orderThisTool(toolSupplierAddress, toolAddress)
+      Worker.returnThisTool(toolSupplierAddress, toolAddress)
     }
   }
 
   render () {
     return(<div className="card rounded">
       <div className="card-block">
-        <h4 className="card-title">Order tool from Tool Supplier</h4>
-        <form className onSubmit={this.orderTool}>
+        <h4 className="card-title">Return tool to Tool supplier</h4>
+        <form className onSubmit={this.returnTool}>
           <div className="form-group">
             <label>Tool Supplier Address</label>
             <input
@@ -56,7 +56,7 @@ class OrderTool extends React.Component {
             </small>
           </fieldset>
           <button type="submit" className="btn btn-primary">
-            Order Tool
+            Return Tool
           </button>
         </form>
       </div>
@@ -64,4 +64,4 @@ class OrderTool extends React.Component {
   }
 }
 
-module.exports =  OrderTool;
+module.exports = ReturnTool;
