@@ -9,15 +9,15 @@ class OrderTool extends React.Component {
     });
   }
 
-  orderTool(event) {
+  orderaTool(event) {
     event.preventDefault()
     Worker.start()
-    var toolName = document.getElementById("toolName").value
+    var toolSupplierAddress = document.getElementById("toolSupplierAddress").value
     var toolAddress = document.getElementById("toolAddress").value
-    if (!toolName || !toolAddress || toolName=="" || toolAddress=="") {
-      alert("Please fill the Tool name and Tool address")
+    if (!toolSupplierAddress || !toolAddress || toolSupplierAddress=="" || toolAddress=="") {
+      alert("Please fill the Tool supplier address and Tool address")
     } else {
-      Worker.orderTool(toolName, toolAddress)
+      Worker.orderThisTool(toolSupplierAddress, toolAddress)
     }
   }
 
@@ -25,13 +25,13 @@ class OrderTool extends React.Component {
     return(<div className="card rounded">
       <div className="card-block">
         <h4 className="card-title">Order tool</h4>
-        <form className onSubmit={this.orderTool}>
+        <form className onSubmit={this.orderaTool}>
           <div className="form-group">
             <label>Tool Supplier Address</label>
             <input
               type="text"
               className="form-control"
-              id="toolName"
+              id="toolSupplierAddress"
               placeholder="eg. 0xbd60e3457851a083f252f36..........."
             />
           </div>

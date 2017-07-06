@@ -32,6 +32,11 @@ var ToolManager = {
     });
 
     this.address = window.web3.eth.coinbase
+
+    ToolSupplier.deployed().then((instance) => {
+      $('#addressButton').html('<button type="button" class="btn btn-outline-warning" data-clipboard-text="'+ instance.address + '"><i class="fa fa-key" aria-hidden="true"></i></button>')
+    });
+
     return true
   },
 

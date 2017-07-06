@@ -1,3 +1,12 @@
-Box = 0x2243ca77d604ad1e562103c23427f30d4dcd464a
-TS = 0xa5562d3b387b322d5ed41ae5d27a0a32f5dd69a2
-Worker = 0x65b82005ecf3fe93485ea921ae011224998be516
+Box: 0x5cb9aed967c3c1e20375e230267aad5dbd4dbd84
+
+  ToolSupplier: 0x0e1c308b8322392f30c8958d77f7b47a9fe86ee8
+
+  MaterialSupplier: 0xac00ec65ab6778ad75408f32b44a9dda05d0bb66
+
+  Worker: 0xde06399dd30deccd7497ddbd83e488b7b9a5b448
+
+Worker.deployed().then(function(i){w=i})
+,
+
+0xa44135f05cd3c29b7fb331e7d251176fcec6d225620def793c6f395c2816fdda

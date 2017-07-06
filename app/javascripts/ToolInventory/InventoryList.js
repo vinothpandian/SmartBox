@@ -15,10 +15,10 @@ class InventoryList extends React.Component {
   render() {
     return (
       <div className="card rounded">
-      <div className="card-block">
-        <h4 className="card-title">There are <span className="text-muted" id="noOfTools"></span> tools in your inventory</h4>
+        <div className="card-block">
+          <h4 className="card-title">There are <span className="text-muted" id="noOfTools"></span> tools in your inventory</h4>
+        </div>
       </div>
-    </div>
   )
   }
 }
