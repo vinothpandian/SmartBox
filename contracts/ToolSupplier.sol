@@ -2,6 +2,16 @@ pragma solidity ^0.4.8;
 
 contract ToolSupplier {
 
+    string public Name;
+
+    function ToolSupplier (string name) {
+        Name = name;
+    }
+
+    function getName() returns(string){
+        return Name;
+    }
+
     struct Tool{
         string toolName;
         bool available;
@@ -42,8 +52,8 @@ contract ToolSupplier {
     }
 
     function getToolsAvailable(uint a) constant returns (string tn, address ta) {
-      tn = available_tools[index_available_tools[a]].toolName;
       ta = index_available_tools[a];
+      tn = available_tools[ta].toolName;
     }
 
     function lendTool(address toolAddress)
@@ -56,5 +66,20 @@ contract ToolSupplier {
     isToolNotAvailable(toolAddress) {
         available_tools[toolAddress].available = true;
         noOfTools++;
+    }
+}
+
+contract ToolSupplierFactory {
+    string[] Names;
+    address[] newContracts;
+
+    function createToolSupplier (string name) {
+        address newContract = new ToolSupplier(name);
+        newContracts.push(newContract);
+        Names.push(name);
+    }
+
+    function getToolSupplierName (uint i) returns(address) {
+        return newContracts[i];
     }
 }
