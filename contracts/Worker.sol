@@ -4,6 +4,16 @@ import "./Box.sol";
 
 contract Worker {
 
+  string public Name;
+
+  function Worker (string name) {
+      Name = name;
+  }
+
+  function getName() returns(string){
+      return Name;
+  }
+
   Box box;
   bool boxAssigned = false;
   event isTheToolOrdered(address toolSuppAd, address toolAd, address boxAd);
@@ -64,4 +74,19 @@ contract Worker {
     delete borrowedTools[toolAddress];
   }
 
+}
+
+contract WorkerFactory {
+    string[] Names;
+    address[] newContracts;
+
+    function createWorker (string name) {
+        address newContract = new Worker(name);
+        newContracts.push(newContract);
+        Names.push(name);
+    }
+
+    function getWorkerName (uint i) returns(address) {
+        return newContracts[i];
+    }
 }
