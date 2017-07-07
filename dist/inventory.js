@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 232:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9,11 +9,11 @@ webpackJsonp([1],{
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-__webpack_require__(333);
+__webpack_require__(334);
 
 /***/ }),
 
-/***/ 333:
+/***/ 334:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30,10 +30,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-var InventoryList = __webpack_require__(334);
-var AddTool = __webpack_require__(420);
-var AddScannedTools = __webpack_require__(421);
-var RemoveTool = __webpack_require__(422);
+var InventoryList = __webpack_require__(335);
+var AddTool = __webpack_require__(419);
+var AddScannedTools = __webpack_require__(420);
+var RemoveTool = __webpack_require__(421);
 
 var InventoryManager = function (_React$Component) {
   _inherits(InventoryManager, _React$Component);
@@ -147,7 +147,7 @@ ReactDOM.render(React.createElement(InventoryManager, null), document.getElement
 
 /***/ }),
 
-/***/ 334:
+/***/ 335:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -167,7 +167,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ToolManager = __webpack_require__(75);
+var ToolManager = __webpack_require__(74);
 
 var InventoryList = function (_React$Component) {
   _inherits(InventoryList, _React$Component);
@@ -217,7 +217,7 @@ module.exports = InventoryList;
 
 /***/ }),
 
-/***/ 419:
+/***/ 418:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -308,7 +308,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 420:
+/***/ 419:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -328,7 +328,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ToolManager = __webpack_require__(75);
+var ToolManager = __webpack_require__(74);
 
 var AddTool = function (_React$Component) {
   _inherits(AddTool, _React$Component);
@@ -445,7 +445,7 @@ module.exports = AddTool;
 
 /***/ }),
 
-/***/ 421:
+/***/ 420:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -465,7 +465,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ToolManager = __webpack_require__(75);
+var ToolManager = __webpack_require__(74);
 
 var AddScannedTools = function (_React$Component) {
   _inherits(AddScannedTools, _React$Component);
@@ -578,7 +578,7 @@ module.exports = AddScannedTools;
 
 /***/ }),
 
-/***/ 422:
+/***/ 421:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -598,7 +598,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ToolManager = __webpack_require__(75);
+var ToolManager = __webpack_require__(74);
 
 var RemoveTool = function (_React$Component) {
   _inherits(RemoveTool, _React$Component);
@@ -706,17 +706,17 @@ module.exports = RemoveTool;
 
 /***/ }),
 
-/***/ 75:
+/***/ 74:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {
 
-var _truffleContract = __webpack_require__(108);
+var _truffleContract = __webpack_require__(107);
 
 var _truffleContract2 = _interopRequireDefault(_truffleContract);
 
-var _ToolSupplier = __webpack_require__(419);
+var _ToolSupplier = __webpack_require__(418);
 
 var _ToolSupplier2 = _interopRequireDefault(_ToolSupplier);
 
@@ -809,4 +809,4 @@ module.exports = ToolManager;
 
 /***/ })
 
-},[232]);
+},[233]);
