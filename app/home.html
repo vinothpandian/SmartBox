@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
   <script type="text/javascript">
     window.onload = function() {
       localStorage.removeItem('page');
@@ -12,43 +15,36 @@
   </script>
 </head>
 
-<body class="text-gray-dark h-100">
-  <div class="section text-center <%= htmlWebpackPlugin.options.color %> py-5 opaque-fade-out">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="text-white display-3"><%= htmlWebpackPlugin.options.title %></h1>
+<body class="text-gray-dark">
+
+  <div id="fullpage">
+    <div class="section text-center container d-flex align-items-center h-100" id="firstPage">
+      <div class="row justify-content-center my-auto">
+        <div class="col-12">
+          <h1 class="display-1 font-weight-400"><%= htmlWebpackPlugin.options.title %></h1>
+        </div>
+        <div class="col-12"><img id="logo" width="256" height="256" alt="Logo" />
+        </div>
+        <div class="col-12 mt-4">
+          <h4>
+          A Smart Replenishment Box - Loaded with the power of Blockchain
+        </h4>
+        </div>
+        <div class="col-12 mt-2">
+          <a href="#links"><img id="down" width="64" height="64" alt="Down"></a>
         </div>
       </div>
     </div>
-  </div>
-  <nav class="navbar navbar-expand-md text-center bg-primary navbar-inverse">
-    <div class="container">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar2SupportedContent" style="font-size:1.2rem">
-        <span class="navbar-text text-white">
-          <%= htmlWebpackPlugin.options.tagLine%>
-        </span>
-      </div>
-    </div>
-  </nav>
-  <div class="mx-auto p-5 wrapper">
-    <div class="container">
-      <div class="row mx-auto bg-faded p-5 rounded w-100">
-        <div class="col-md-12">
-          <ul class="nav nav-fill">
-            <li class="nav-item">
-              <a class="btn btn-info btn-lg" target="_blank" href="inventory.html">Inventory</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-warning btn-lg" target="_blank" href="box.html">Box</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-success btn-lg" target="_blank" href="worker.html">Worker</a>
-            </li>
-          </ul>
+    <div class="section container text-center d-flex align-items-center h-100" id="secondPage">
+        <div class="row d-flex justify-content-between">
+          <div class="col-3 p-3"><img id="tools" alt="Tools"></div>
+          <div class="col-3 p-3"><img id="box" alt="Box"></div>
+          <div class="col-3 p-3"><img id="worker" alt="Worker"></div>
+          <div class="col-12"></div>
+          <div class="col-3 p-3"><a class="btn btn-info btn-lg btn-block" target="_blank" href="inventory.html">Inventory</a></div>
+          <div class="col-3 p-3"><a class="btn btn-danger btn-lg btn-block" target="_blank" href="box.html">Box</a></div>
+          <div class="col-3 p-3"><a class="btn btn-success btn-lg btn-block" target="_blank" href="worker.html">Worker</a></div>
         </div>
-      </div>
     </div>
   </div>
 </body>

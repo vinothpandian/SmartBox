@@ -1,4 +1,4 @@
-webpackJsonp([4],{
+webpackJsonp([3],{
 
 /***/ 111:
 /***/ (function(module, exports, __webpack_require__) {
@@ -3133,17 +3133,40 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ 424:
+/***/ 439:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(120);
-__webpack_require__(112);
-__webpack_require__(111);
-__webpack_require__(19);
-__webpack_require__(7);
-module.exports = __webpack_require__(33);
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
 
+var _logo = __webpack_require__(440);
+
+var _logo2 = _interopRequireDefault(_logo);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+__webpack_require__(111);
+
+
+var LogoImg = document.getElementById('logo');
+LogoImg.src = _logo2.default;
+
+$(document).ready(function () {
+  $('#fullpage').fullpage({
+    anchors: ['home', 'links'],
+    navigation: true,
+    verticalCentered: false
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
+
+/***/ }),
+
+/***/ 440:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/11074a201782ad98c362614de5d5b514-logo.png";
 
 /***/ })
 
-},[424]);
+},[439]);

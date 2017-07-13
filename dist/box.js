@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 433:
+/***/ 434:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9,11 +9,11 @@ webpackJsonp([2],{
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-__webpack_require__(434);
+__webpack_require__(435);
 
 /***/ }),
 
-/***/ 434:
+/***/ 435:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30,7 +30,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-var BoxInventory = __webpack_require__(435);
+var BoxInventory = __webpack_require__(436);
 
 var InventoryManager = function (_React$Component) {
   _inherits(InventoryManager, _React$Component);
@@ -126,7 +126,7 @@ ReactDOM.render(React.createElement(InventoryManager, null), document.getElement
 
 /***/ }),
 
-/***/ 435:
+/***/ 436:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -146,7 +146,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var BoxManager = __webpack_require__(436);
+var BoxManager = __webpack_require__(437);
 
 var BoxInventory = function (_React$Component) {
   _inherits(BoxInventory, _React$Component);
@@ -196,7 +196,7 @@ module.exports = BoxInventory;
 
 /***/ }),
 
-/***/ 436:
+/***/ 437:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -206,7 +206,7 @@ var _truffleContract = __webpack_require__(108);
 
 var _truffleContract2 = _interopRequireDefault(_truffleContract);
 
-var _Box = __webpack_require__(437);
+var _Box = __webpack_require__(438);
 
 var _Box2 = _interopRequireDefault(_Box);
 
@@ -266,11 +266,11 @@ var BoxManager = {
 };
 
 module.exports = BoxManager;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ }),
 
-/***/ 437:
+/***/ 438:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -365,4 +365,4 @@ module.exports = {
 
 /***/ })
 
-},[433]);
+},[434]);

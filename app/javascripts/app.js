@@ -9,6 +9,8 @@ require('bootstrap');
 //  Load the css file
 require('../stylesheets/app.css')
 
+
+
 import clipboard from 'clipboard';
 
 new clipboard('.btn');

@@ -11,6 +11,7 @@ module.exports = {
       vendor: Object.keys(package.dependencies),
       worker: './app/javascripts/worker.js',
       box: './app/javascripts/box.js',
+      home: './app/javascripts/home.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -19,7 +20,9 @@ module.exports = {
     devServer: {
         inline: true,
         contentBase: path.join(__dirname, 'dist'),
-        port: 8000
+        host: '0.0.0.0',
+        port: 8001,
+        disableHostCheck: true,
     },
     plugins: [// Use template of our app's index.html and generate new index.html in the build folder.
           new CommonsChunkPlugin({
@@ -30,9 +33,8 @@ module.exports = {
             hash: true,
             title: 'SmartBox',
             tagLine: 'A Smart Replenishment Box',
-            color: 'bg-danger',
             template: './app/home.html',
-            chunks: ['app','vendor'],
+            chunks: ['app','home','vendor'],
             filename: './index.html' //relative to root of the application
         }),
         new HtmlWebpackPlugin({
@@ -90,7 +92,17 @@ module.exports = {
                 presets: ['react','es2015']
               }
             }
-          }
+          },
+          {
+            test: /\.(png|jp(e*)g|svg)$/,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    limit: 8000, // Convert images < 8kb to base64 strings
+                    name: 'images/[hash]-[name].[ext]'
+                }
+            }]
+          },
         ],
     }
 };

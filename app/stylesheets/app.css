@@ -9,6 +9,10 @@
 html, body {
   scroll-behavior: smooth; }
 
+#secondPage img{
+  width: 100%;
+}
+
   a {
     cursor: pointer;
   }

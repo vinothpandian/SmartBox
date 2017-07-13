@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SmartBox</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <title>
+    SmartBox
+  </title>
   <script type="text/javascript">
     window.onload = function() {
       localStorage.removeItem('page');
@@ -12,44 +15,50 @@
   </script>
 </head>
 
-<body class="text-gray-dark h-100">
-  <div class="section text-center bg-danger py-5 opaque-fade-out">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="text-white display-3">SmartBox</h1>
+<body class="text-gray-dark">
+
+  <div id="fullpage">
+    <div class="section active text-center opaque-fade-out container d-flex align-items-center h-100">
+      <div class="row justify-content-center my-auto">
+        <div class="col-12">
+          <h1 class="display-1 font-weight-400">SmartBox</h1>
         </div>
-      </div>
-    </div>
-  </div>
-  <nav class="navbar navbar-expand-md text-center bg-primary navbar-inverse">
-    <div class="container">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar2SupportedContent" style="font-size:1.2rem">
-        <span class="navbar-text text-white">
+        <div class="col-12"><img id="logo" width="256" height="256" alt="Logo" />
+        </div>
+        <div class="col-12"><span class="display-4">
           A Smart Replenishment Box
         </span>
+        </div>
+        <div class="col-12 mt-2">
+          <a href="#"><img id="down" width="64" height="64" alt="Down"></a>
+        </div>
       </div>
     </div>
-  </nav>
-  <div class="mx-auto p-5 wrapper">
-    <div class="container">
-      <div class="row mx-auto bg-faded p-5 rounded w-100">
-        <div class="col-md-12">
-          <ul class="nav nav-fill">
-            <li class="nav-item">
-              <a class="btn btn-info btn-lg" target="_blank" href="inventory.html">Inventory</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-warning btn-lg" target="_blank" href="box.html">Box</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-success btn-lg" target="_blank" href="worker.html">Worker</a>
-            </li>
-          </ul>
+    <div class="section">
+      <div class="mx-auto p-5 wrapper">
+        <div class="container">
+          <div class="row mx-auto bg-faded p-5 rounded w-100">
+            <div class="col-md-12">
+              <ul class="nav nav-fill">
+                <li class="nav-item">
+                  <a class="btn btn-info btn-lg" target="_blank" href="inventory.html">Inventory</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-warning btn-lg" target="_blank" href="box.html">Box</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-success btn-lg" target="_blank" href="worker.html">Worker</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-<script type="text/javascript" src="app.js?a266aed61bce6b854762"></script><script type="text/javascript" src="vendor.js?a266aed61bce6b854762"></script></body>
+
+
+
+<script type="text/javascript" src="app.js?7c44244a8b5157a463ed"></script><script type="text/javascript" src="home.js?7c44244a8b5157a463ed"></script><script type="text/javascript" src="vendor.js?7c44244a8b5157a463ed"></script></body>
+
 </html>

@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 424:
+/***/ 425:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9,11 +9,11 @@ webpackJsonp([0],{
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-__webpack_require__(425);
+__webpack_require__(426);
 
 /***/ }),
 
-/***/ 425:
+/***/ 426:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30,12 +30,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-var BorrowedTools = __webpack_require__(426);
-var TakeToolFromBox = __webpack_require__(428);
-var PutToolToBox = __webpack_require__(429);
-var OrderTool = __webpack_require__(430);
-var ReturnTool = __webpack_require__(431);
-var AddToBox = __webpack_require__(432);
+var BorrowedTools = __webpack_require__(427);
+var TakeToolFromBox = __webpack_require__(429);
+var PutToolToBox = __webpack_require__(430);
+var OrderTool = __webpack_require__(431);
+var ReturnTool = __webpack_require__(432);
+var AddToBox = __webpack_require__(433);
 
 var OrderManager = function (_React$Component) {
   _inherits(OrderManager, _React$Component);
@@ -173,7 +173,7 @@ ReactDOM.render(React.createElement(OrderManager, null), document.getElementById
 
 /***/ }),
 
-/***/ 426:
+/***/ 427:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -256,7 +256,7 @@ module.exports = BorrowedTools;
 
 /***/ }),
 
-/***/ 427:
+/***/ 428:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -457,7 +457,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 428:
+/***/ 429:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -578,7 +578,7 @@ module.exports = TakeToolFromBox;
 
 /***/ }),
 
-/***/ 429:
+/***/ 430:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -699,7 +699,7 @@ module.exports = PutToolToBox;
 
 /***/ }),
 
-/***/ 430:
+/***/ 431:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -836,7 +836,7 @@ module.exports = OrderTool;
 
 /***/ }),
 
-/***/ 431:
+/***/ 432:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -973,7 +973,7 @@ module.exports = ReturnTool;
 
 /***/ }),
 
-/***/ 432:
+/***/ 433:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1076,7 +1076,7 @@ var _truffleContract = __webpack_require__(108);
 
 var _truffleContract2 = _interopRequireDefault(_truffleContract);
 
-var _Worker = __webpack_require__(427);
+var _Worker = __webpack_require__(428);
 
 var _Worker2 = _interopRequireDefault(_Worker);
 
@@ -1233,8 +1233,8 @@ var WorkerManager = {
 };
 
 module.exports = WorkerManager;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ })
 
-},[424]);
+},[425]);

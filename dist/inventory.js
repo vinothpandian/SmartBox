@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 232:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9,11 +9,11 @@ webpackJsonp([1],{
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-__webpack_require__(333);
+__webpack_require__(334);
 
 /***/ }),
 
-/***/ 333:
+/***/ 334:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30,10 +30,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-var InventoryList = __webpack_require__(334);
-var AddTool = __webpack_require__(420);
-var AddScannedTools = __webpack_require__(421);
-var RemoveTool = __webpack_require__(422);
+var InventoryList = __webpack_require__(335);
+var AddTool = __webpack_require__(421);
+var AddScannedTools = __webpack_require__(422);
+var RemoveTool = __webpack_require__(423);
 
 var InventoryManager = function (_React$Component) {
   _inherits(InventoryManager, _React$Component);
@@ -147,7 +147,7 @@ ReactDOM.render(React.createElement(InventoryManager, null), document.getElement
 
 /***/ }),
 
-/***/ 334:
+/***/ 335:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -217,7 +217,7 @@ module.exports = InventoryList;
 
 /***/ }),
 
-/***/ 419:
+/***/ 420:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -308,7 +308,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 420:
+/***/ 421:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -445,7 +445,7 @@ module.exports = AddTool;
 
 /***/ }),
 
-/***/ 421:
+/***/ 422:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -574,11 +574,11 @@ var AddScannedTools = function (_React$Component) {
 }(_react2.default.Component);
 
 module.exports = AddScannedTools;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ }),
 
-/***/ 422:
+/***/ 423:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -716,7 +716,7 @@ var _truffleContract = __webpack_require__(108);
 
 var _truffleContract2 = _interopRequireDefault(_truffleContract);
 
-var _ToolSupplier = __webpack_require__(419);
+var _ToolSupplier = __webpack_require__(420);
 
 var _ToolSupplier2 = _interopRequireDefault(_ToolSupplier);
 
@@ -805,8 +805,8 @@ var ToolManager = {
 };
 
 module.exports = ToolManager;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ })
 
-},[232]);
+},[233]);
