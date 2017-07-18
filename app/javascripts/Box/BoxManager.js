@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 
 const BoxInventory = require('./BoxInventory');
 
-class InventoryManager extends React.Component {
+class BoxManager extends React.Component {
 
   constructor(props) {
     super(props);
@@ -78,6 +78,6 @@ class InventoryManager extends React.Component {
 }
 
 ReactDOM.render(
-  <InventoryManager />,
+  <BoxManager />,
   document.getElementById("menu")
 );

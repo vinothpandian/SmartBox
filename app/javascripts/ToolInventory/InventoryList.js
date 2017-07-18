@@ -4,6 +4,7 @@ const ToolManager = require('./ToolSupplierContract');
 class InventoryList extends React.Component {
 
   componentDidMount() {
+    $("#alertUser").hide();
     ToolManager.start()
     ToolManager.getNoOfToolsAvailable()
   }

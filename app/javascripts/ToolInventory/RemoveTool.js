@@ -9,7 +9,8 @@ class RemoveTool extends React.Component {
     });
   }
 
-  deleteTool() {
+  deleteTool(event) {
+    event.preventDefault()
     var rmToolAddress = document.getElementById("rmToolAddress").value
     if (!rmToolAddress || rmToolAddress == "") {
       alert("Please enter the tool address to delete")
@@ -20,6 +21,10 @@ class RemoveTool extends React.Component {
           ToolManager.removeTool(rmToolAddress)
       }
     }
+  }
+
+  componentDidMount() {
+    $("#alertUser").hide();
   }
 
   render () {

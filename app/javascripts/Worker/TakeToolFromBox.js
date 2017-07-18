@@ -20,6 +20,10 @@ class TakeToolFromBox extends React.Component {
     }
   }
 
+  componentDidMount() {
+    $("#alertUser").hide();
+  }
+
   render () {
     return (
       <div className="card rounded">

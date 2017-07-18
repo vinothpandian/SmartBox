@@ -4,6 +4,7 @@ const Worker = require('./WorkerContract');
 class BorrowedTools extends React.Component {
 
   componentDidMount() {
+    $("#alertUser").hide();
     Worker.start()
     Worker.getNoOfOrderedTools()
     Worker.getNoOfBorrowedTools()

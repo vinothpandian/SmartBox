@@ -13,6 +13,27 @@ html, body {
   width: 100%;
 }
 
+.loader {
+  display: inline-block;
+  border: 0.2rem solid #128F76;
+  border-radius: 50%;
+  border-top: 0.2rem solid #EF8A80;
+  width: 1rem;
+  height: 1rem;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
   a {
     cursor: pointer;
   }

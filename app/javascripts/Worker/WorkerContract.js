@@ -43,12 +43,27 @@ var WorkerManager = {
   takeToolFromBox: function(toolAddress) {
     var self = this;
 
-    alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
+    alertUser("warning","<div class='loader'></div><strong class='ml-4'>Initiating Transaction!</strong> Please wait.... ")
 
     Worker.deployed().then(function(instance) {
       return instance.getToolFromBox(toolAddress, {from: self.address});
-    }).then(function() {
-      alertUser("success","<strong>Transaction success!!</strong>")
+    }).then(function(result) {
+
+      var success = false
+
+      for (var i = 0; i < result.logs.length; i++) {
+        var log = result.logs[i];
+        if (log.event == "tookToolFromBox") {
+          alertUser("success","<strong>Tool checked out of Box successfully!!</strong>")
+          success = true
+          break;
+        }
+      }
+
+      if (!success) {
+        alertUser("danger","<strong>Error checking out tool!!</strong> Possible error: Tool is not in Box")
+      }
+
     }).catch(function(e) {
       console.log(e);
       alertUser("danger","<strong>Error adding Worker to Box!!</strong> Check logs!")
@@ -58,65 +73,117 @@ var WorkerManager = {
   putToolToBox: function(toolAddress) {
     var self = this;
 
-    alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
+    alertUser("warning","<div class='loader'></div><strong class='ml-4'>Initiating Transaction!</strong> Please wait.... ")
 
     Worker.deployed().then(function(instance) {
       return instance.putToolInBox(toolAddress, {from: self.address});
-    }).then(function() {
-      alertUser("success","<strong>Transaction success!!</strong>")
+    }).then(function(result) {
+
+      var success = false
+
+      for (var i = 0; i < result.logs.length; i++) {
+        var log = result.logs[i];
+        if (log.event == "putToolToBoxEvent") {
+          alertUser("success","<strong>Tool checked back in to the Box successfully!!</strong>")
+          success = true
+          break;
+        }
+      }
+
+      if (!success) {
+        alertUser("danger","<strong>Error checking in tool!!</strong> Possible error: Tool address is wrong")
+      }
+
     }).catch(function(e) {
       console.log(e);
-      alertUser("danger","<strong>Error adding Worker to Box!!</strong> Check logs!")
+      alertUser("danger","<strong>Error checking in tool!!</strong> Check logs!!")
     });
   },
 
   orderThisTool: function(toolSupplierAddress, toolAddress) {
     var self = this;
 
-    alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
+    alertUser("warning","<div class='loader'></div><strong class='ml-4'>Initiating Transaction!</strong> Please wait.... ")
 
     Worker.deployed().then(function(instance) {
       return instance.orderTool(toolSupplierAddress, toolAddress, {from: self.address});
     }).then(function(result) {
+
+      var success = false
+
       for (var i = 0; i < result.logs.length; i++) {
         var log = result.logs[i];
-
-        if (log.event == "isTheToolOrdered") {
-          // We found the event!
-          alertUser("success","<strong>Transaction success!!</strong>")
+        if (log.event == "toolOrdered") {
+          alertUser("success","<strong>Tool ordered from Tool Supplier to the Box successfully!!</strong>")
+          success = true
           break;
         }
       }
+
+      if (!success) {
+        alertUser("danger","<strong>Error ordering tool!!</strong> Possible error: Tool address is wrong")
+      }
+
     }).catch(function(e) {
       console.log(e);
-      alertUser("danger","<strong>Error adding tool!!</strong> Check logs!")
+      alertUser("danger","<strong>Error ordering tool!!</strong> Check logs!")
     });
   },
 
   returnThisTool: function(toolSupplierAddress, toolAddress) {
     var self = this;
 
-    alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
+    alertUser("warning","<div class='loader'></div><strong class='ml-4'>Initiating Transaction!</strong> Please wait.... ")
 
     Worker.deployed().then(function(instance) {
       return instance.returnTool(toolSupplierAddress, toolAddress, {from: self.address});
     }).then(function(result) {
-      alertUser("success","<strong>Transaction success!!</strong>")
+
+      var success = false
+
+      for (var i = 0; i < result.logs.length; i++) {
+        var log = result.logs[i];
+        if (log.event == "toolReturned") {
+          alertUser("success","<strong>Tool returned from Box to Tool Supplier successfully!!</strong>")
+          success = true
+          break;
+        }
+      }
+
+      if (!success) {
+        alertUser("danger","<strong>Error returning tool!!</strong> Possible error: Tool address is wrong")
+      }
+
     }).catch(function(e) {
       console.log(e);
-      alertUser("danger","<strong>Error adding tool!!</strong> Check logs!")
+      alertUser("danger","<strong>Error returning tool!!</strong> Check logs!")
     });
   },
 
   addToBox: function(boxAddress) {
     var self = this;
 
-    alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
+    alertUser("warning","<div class='loader'></div><strong class='ml-4'>Initiating Transaction!</strong> Please wait.... ")
 
     Worker.deployed().then(function(instance) {
       return instance.addWorkerToBox(boxAddress, {from: self.address});
-    }).then(function() {
-      alertUser("success","<strong>Transaction success!!</strong>")
+    }).then(function(result) {
+
+      var success = false
+
+      for (var i = 0; i < result.logs.length; i++) {
+        var log = result.logs[i];
+        if (log.event == "boxAdded") {
+          alertUser("success","<strong>Worker added to Box!!</strong>")
+          success = true
+          break;
+        }
+      }
+
+      if (!success) {
+        alertUser("danger","<strong>Error adding Worker to Box!!</strong>")
+      }
+
     }).catch(function(e) {
       console.log(e);
       alertUser("danger","<strong>Error adding Worker to Box!!</strong> Check logs!")

@@ -55,12 +55,27 @@ var ToolManager = {
   addTool: function(toolName, toolAddress) {
     var self = this;
 
-    alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
+    alertUser("warning","<div class='loader'></div><strong class='ml-4'>Initiating Transaction!</strong> Please wait.... ")
 
     ToolSupplier.deployed().then(function(instance) {
       return instance.addTool(toolName, toolAddress, {from: self.address});
-    }).then(function() {
-      alertUser("success","<strong>Transaction success!!</strong>")
+    }).then(function(result) {
+
+      var success = false
+
+      for (var i = 0; i < result.logs.length; i++) {
+        var log = result.logs[i];
+        if (log.event == "broadcastToolAdded") {
+          alertUser("success","<strong>Tool added successfully!!</strong>")
+          success = true
+          break;
+        }
+      }
+
+      if (!success) {
+        alertUser("danger","<strong>Error adding tool!!</strong> Possible error: Tool already exist in your inventory")
+      }
+
     }).catch(function(e) {
       console.log(e);
       alertUser("danger","<strong>Error adding tool!!</strong> Check logs!")
@@ -70,16 +85,35 @@ var ToolManager = {
   removeTool: function(toolAddress) {
     var self = this;
 
-    alertUser("warning","<strong>Initiating Transaction!</strong> Please wait....")
+    alertUser("warning","<div class='loader'></div><strong class='ml-4'>Initiating Transaction!</strong> Please wait.... ")
 
     ToolSupplier.deployed().then(function(instance) {
+
       return instance.removeTool(toolAddress, {from: self.address});
-    }).then(function() {
-      alertUser("success","<strong>Tool deleted successfully!!</strong>")
+    }).then(function(result) {
+
+      var success = false
+
+      for (var i = 0; i < result.logs.length; i++) {
+        var log = result.logs[i];
+        if (log.event == "broadcastToolRemoved") {
+          alertUser("success","<strong>Tool deleted successfully!!</strong>")
+          success = true
+          break;
+        }
+      }
+
+      if (!success) {
+        alertUser("danger","<strong>Error adding tool!!</strong> Possible error: Tool does not exist in your inventory")
+      }
+
     }).catch(function(e) {
       console.log(e);
       alertUser("warning","<strong>Error deleting tool!!</strong> Check logs!")
     });
+
+
+
   }
 }
 

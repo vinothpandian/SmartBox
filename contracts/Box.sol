@@ -4,7 +4,6 @@ import "./ToolSupplier.sol";
 
 contract Box{
 
-    //  TODO: manage confirmation of orders!
     struct Order {
       address orderedBy;
       address suppliedBy;

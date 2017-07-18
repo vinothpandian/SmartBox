@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 233:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9,11 +9,11 @@ webpackJsonp([1],{
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-__webpack_require__(334);
+__webpack_require__(342);
 
 /***/ }),
 
-/***/ 334:
+/***/ 342:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30,10 +30,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-var InventoryList = __webpack_require__(335);
-var AddTool = __webpack_require__(421);
-var AddScannedTools = __webpack_require__(422);
-var RemoveTool = __webpack_require__(423);
+var InventoryList = __webpack_require__(343);
+var AddTool = __webpack_require__(429);
+var AddScannedTools = __webpack_require__(430);
+var RemoveTool = __webpack_require__(431);
 
 var InventoryManager = function (_React$Component) {
   _inherits(InventoryManager, _React$Component);
@@ -147,7 +147,7 @@ ReactDOM.render(React.createElement(InventoryManager, null), document.getElement
 
 /***/ }),
 
-/***/ 335:
+/***/ 343:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -217,7 +217,7 @@ module.exports = InventoryList;
 
 /***/ }),
 
-/***/ 420:
+/***/ 428:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -296,19 +296,54 @@ module.exports = {
 	"unlinked_binary": "0x6060604052341561000c57fe5b5b6104358061001c6000396000f300606060405263ffffffff60e060020a6000350416635528b360811461004d5780635eed1e2c1461006b5780637d61d4881461008957806389479985146100ec578063979831741461010a575bfe5b341561005557fe5b610069600160a060020a036004351661012c565b005b341561007357fe5b610069600160a060020a036004351661018a565b005b341561009157fe5b610069600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284375094965050509235600160a060020a031692506101e9915050565b005b34156100f457fe5b610069600160a060020a03600435166102a7565b005b341561011257fe5b61011a61031a565b60408051918252519081900360200190f35b600160a060020a03811660009081526001602081905260409091200154819060ff16156101595760006000fd5b600160a060020a038216600090815260016020819052604082208101805460ff19168217905581540190555b5b5050565b600160a060020a03811660009081526001602081905260409091200154819060ff1615156101b85760006000fd5b600160a060020a0382166000908152600160208190526040822001805460ff1916905580546000190190555b5b5050565b600160a060020a038116600090815260016020819052604090912001548190610100900460ff161561021b5760006000fd5b6040805160608101825284815260016020808301829052828401829052600160a060020a038616600090815291815292902081518051929391926102629284920190610321565b5060208201516001918201805460409094015115156101000261ff001992151560ff199095169490941791909116929092179091556000805490910190555b5b505050565b600160a060020a038116600090815260016020819052604090912001548190610100900460ff1615156102da5760006000fd5b600160a060020a0382166000908152600160205260408120906102fd82826103a0565b50600101805461ffff19169055600080546000190190555b5b5050565b6000545b90565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061036257805160ff191683800117855561038f565b8280016001018555821561038f579182015b8281111561038f578251825591602001919060010190610374565b5b5061039c9291506103e8565b5090565b50805460018160011615610100020316600290046000825580601f106103c657506103e4565b601f0160209004906000526020600020908101906103e491906103e8565b5b50565b61031e91905b8082111561039c57600081556001016103ee565b5090565b905600a165627a7a723058208bc1fafa7f9f28cb2cdbab1f3a370bc3a2131afc8262ddc06110b7737f13616e0029",
 	"networks": {
 		"21": {
-			"events": {},
+			"events": {
+				"0xa9e74b415cca04d9e309ed3f57c254d0652da32ca455a6513a801fd1a7298e21": {
+					"anonymous": false,
+					"inputs": [
+						{
+							"indexed": false,
+							"name": "toolName",
+							"type": "string"
+						},
+						{
+							"indexed": false,
+							"name": "toolAddress",
+							"type": "address"
+						},
+						{
+							"indexed": false,
+							"name": "msgSender",
+							"type": "address"
+						}
+					],
+					"name": "broadcastToolAdded",
+					"type": "event"
+				},
+				"0x485726d37eb447aa6a8fd8a7890861919f3b7a008d0610650d838969aad833f3": {
+					"anonymous": false,
+					"inputs": [
+						{
+							"indexed": false,
+							"name": "toolAddress",
+							"type": "address"
+						}
+					],
+					"name": "broadcastToolRemoved",
+					"type": "event"
+				}
+			},
 			"links": {},
-			"address": "0xf53b2a275a3201a6fc83fbf0699dee31d40f3664",
-			"updated_at": 1499361838413
+			"address": "0xa81613ecfdd1eb0f90b5b37a9dfbe24c948ce349",
+			"updated_at": 1500019488433
 		}
 	},
 	"schema_version": "0.0.5",
-	"updated_at": 1499361838413
+	"updated_at": 1500019488433
 };
 
 /***/ }),
 
-/***/ 421:
+/***/ 429:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -445,7 +480,7 @@ module.exports = AddTool;
 
 /***/ }),
 
-/***/ 422:
+/***/ 430:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -578,7 +613,7 @@ module.exports = AddScannedTools;
 
 /***/ }),
 
-/***/ 423:
+/***/ 431:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -716,7 +751,7 @@ var _truffleContract = __webpack_require__(108);
 
 var _truffleContract2 = _interopRequireDefault(_truffleContract);
 
-var _ToolSupplier = __webpack_require__(420);
+var _ToolSupplier = __webpack_require__(428);
 
 var _ToolSupplier2 = _interopRequireDefault(_ToolSupplier);
 
@@ -809,4 +844,4 @@ module.exports = ToolManager;
 
 /***/ })
 
-},[233]);
+},[241]);

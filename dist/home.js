@@ -1,4 +1,4 @@
-webpackJsonp([3],{
+webpackJsonp([2],{
 
 /***/ 111:
 /***/ (function(module, exports, __webpack_require__) {
@@ -3133,15 +3133,31 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ 439:
+/***/ 447:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {
 
-var _logo = __webpack_require__(440);
+var _logo = __webpack_require__(448);
 
 var _logo2 = _interopRequireDefault(_logo);
+
+var _down = __webpack_require__(449);
+
+var _down2 = _interopRequireDefault(_down);
+
+var _tools = __webpack_require__(450);
+
+var _tools2 = _interopRequireDefault(_tools);
+
+var _worker = __webpack_require__(451);
+
+var _worker2 = _interopRequireDefault(_worker);
+
+var _background = __webpack_require__(452);
+
+var _background2 = _interopRequireDefault(_background);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3151,22 +3167,64 @@ __webpack_require__(111);
 var LogoImg = document.getElementById('logo');
 LogoImg.src = _logo2.default;
 
+var DownImg = document.getElementById('down');
+DownImg.src = _down2.default;
+
+var ToolsImg = document.getElementById('tools');
+ToolsImg.src = _tools2.default;
+
+var BoxImg = document.getElementById('box');
+BoxImg.src = _logo2.default;
+
+var WorkerImg = document.getElementById('worker');
+WorkerImg.src = _worker2.default;
+
 $(document).ready(function () {
   $('#fullpage').fullpage({
     anchors: ['home', 'links'],
-    navigation: true,
     verticalCentered: false
   });
 });
+
+$('body').css('background-image', 'url(' + _background2.default + ')');
+$('body').css('background-size', 'cover');
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ }),
 
-/***/ 440:
+/***/ 448:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "images/11074a201782ad98c362614de5d5b514-logo.png";
 
+/***/ }),
+
+/***/ 449:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/cc1008e869fac0186fa10e786bd74767-down.png";
+
+/***/ }),
+
+/***/ 450:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/49808a0367fec9a17f6e45b014806f44-tools.png";
+
+/***/ }),
+
+/***/ 451:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/741dff6743b63fc43e2569c23bbe70c0-worker.png";
+
+/***/ }),
+
+/***/ 452:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/0d29ffa472e35fca75700e805f33dfe8-background.jpg";
+
 /***/ })
 
-},[439]);
+},[447]);

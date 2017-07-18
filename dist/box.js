@@ -1,6 +1,6 @@
-webpackJsonp([2],{
+webpackJsonp([3],{
 
-/***/ 434:
+/***/ 442:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9,11 +9,11 @@ webpackJsonp([2],{
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-__webpack_require__(435);
+__webpack_require__(443);
 
 /***/ }),
 
-/***/ 435:
+/***/ 443:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30,7 +30,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(33);
 
-var BoxInventory = __webpack_require__(436);
+var BoxInventory = __webpack_require__(444);
 
 var InventoryManager = function (_React$Component) {
   _inherits(InventoryManager, _React$Component);
@@ -126,7 +126,7 @@ ReactDOM.render(React.createElement(InventoryManager, null), document.getElement
 
 /***/ }),
 
-/***/ 436:
+/***/ 444:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -146,7 +146,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var BoxManager = __webpack_require__(437);
+var BoxManager = __webpack_require__(445);
 
 var BoxInventory = function (_React$Component) {
   _inherits(BoxInventory, _React$Component);
@@ -196,7 +196,7 @@ module.exports = BoxInventory;
 
 /***/ }),
 
-/***/ 437:
+/***/ 445:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -206,7 +206,7 @@ var _truffleContract = __webpack_require__(108);
 
 var _truffleContract2 = _interopRequireDefault(_truffleContract);
 
-var _Box = __webpack_require__(438);
+var _Box = __webpack_require__(446);
 
 var _Box2 = _interopRequireDefault(_Box);
 
@@ -270,7 +270,7 @@ module.exports = BoxManager;
 
 /***/ }),
 
-/***/ 438:
+/***/ 446:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -355,14 +355,14 @@ module.exports = {
 		"21": {
 			"events": {},
 			"links": {},
-			"address": "0x3118cfa9e64342d0169d1952c60b4d484bfaed4a",
-			"updated_at": 1499361838417
+			"address": "0xa4634d322c1a3799462e649bc182fd0d6f0a03bf",
+			"updated_at": 1500019488438
 		}
 	},
 	"schema_version": "0.0.5",
-	"updated_at": 1499361838417
+	"updated_at": 1500019488438
 };
 
 /***/ })
 
-},[434]);
+},[442]);

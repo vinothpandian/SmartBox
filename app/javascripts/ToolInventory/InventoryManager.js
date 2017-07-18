@@ -61,6 +61,7 @@ class InventoryManager extends React.Component {
   }
 
   componentDidMount() {
+    $("#alertUser").hide();
     this.loadRelevantPage()
   }
 

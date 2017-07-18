@@ -4,19 +4,13 @@ import "./Box.sol";
 
 contract Worker {
 
-  string public Name;
-
-  function Worker (string name) {
-      Name = name;
-  }
-
-  function getName() returns(string){
-      return Name;
-  }
-
   Box box;
   bool boxAssigned = false;
-  event isTheToolOrdered(address toolSuppAd, address toolAd, address boxAd);
+  event toolOrdered(address toolAddress);
+  event boxAdded(address boxAddress);
+  event toolReturned(address toolAddress);
+  event tookToolFromBox(address toolAddress);
+  event putToolToBoxEvent(address toolAddress);
 
   mapping (address => bool) borrowedTools;
   uint noOfBorrowedTools;
@@ -30,6 +24,7 @@ contract Worker {
   function addWorkerToBox(address boxAddress) {
     box = Box(boxAddress);
     boxAssigned = true;
+    boxAdded(boxAddress);
   }
 
   function getNoOfBorrowedTools() constant returns (uint)
@@ -50,7 +45,7 @@ contract Worker {
   isWorkerAssignedToABox(){
     box.orderTool(toolSupplier, toolAddress);
     noOfOrderedTools++;
-    isTheToolOrdered(toolSupplier, toolAddress, address(box));
+    toolOrdered(toolAddress);
   }
 
   function getToolFromBox(address toolAddress)
@@ -58,6 +53,7 @@ contract Worker {
       box.obtainTool(toolAddress);
       borrowedTools[toolAddress] = true;
       noOfBorrowedTools++;
+      tookToolFromBox(toolAddress);
   }
 
   function putToolInBox(address toolAddress)
@@ -65,6 +61,7 @@ contract Worker {
       box.putTool(toolAddress);
       borrowedTools[toolAddress] = false;
       noOfBorrowedTools--;
+      putToolToBoxEvent(toolAddress);
   }
 
   function returnTool(address toolSupplier, address toolAddress)
@@ -72,21 +69,7 @@ contract Worker {
     box.returnTool(toolSupplier, toolAddress);
     noOfOrderedTools--;
     delete borrowedTools[toolAddress];
+    toolReturned(toolAddress);
   }
 
-}
-
-contract WorkerFactory {
-    string[] Names;
-    address[] newContracts;
-
-    function createWorker (string name) {
-        address newContract = new Worker(name);
-        newContracts.push(newContract);
-        Names.push(name);
-    }
-
-    function getWorkerName (uint i) returns(address) {
-        return newContracts[i];
-    }
 }

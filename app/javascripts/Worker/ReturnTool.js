@@ -21,6 +21,10 @@ class ReturnTool extends React.Component {
     }
   }
 
+  componentDidMount() {
+    $("#alertUser").hide();
+  }
+
   render () {
     return(<div className="card rounded">
       <div className="card-block">

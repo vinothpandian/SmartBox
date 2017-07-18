@@ -4,6 +4,7 @@ const BoxManager = require('./BoxContract');
 class BoxInventory extends React.Component {
 
   componentDidMount() {
+    $("#alertUser").hide();
     BoxManager.start()
     BoxManager.getNoOfToolsInBox()
   }
