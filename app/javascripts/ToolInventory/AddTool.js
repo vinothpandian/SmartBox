@@ -14,10 +14,11 @@ class AddTool extends React.Component {
     ToolManager.start()
     var toolName = document.getElementById("toolName").value
     var toolAddress = document.getElementById("toolAddress").value
-    if (!toolName || !toolAddress || toolName=="" || toolAddress=="") {
-      alert("Please fill the Tool name and Tool address")
+    var toolPrice = document.getElementById("toolPrice").value
+    if (!toolName || !toolAddress || !toolPrice || toolName=="" || toolAddress=="" || toolPrice=="") {
+      alert("Please fill the Tool name, price and Tool address")
     } else {
-      ToolManager.addTool(toolName, toolAddress)
+      ToolManager.addTool(toolName, toolAddress, toolPrice)
     }
   }
 
@@ -37,6 +38,16 @@ class AddTool extends React.Component {
               className="form-control"
               id="toolName"
               placeholder="eg. Wire (5m)"
+            />
+          </div>
+          <div className="form-group">
+            <label>Price</label>
+            <input
+              type="number"
+              className="form-control"
+              id="toolPrice"
+              min="0"
+              placeholder="eg. 75"
             />
           </div>
           <fieldset className="form-group">

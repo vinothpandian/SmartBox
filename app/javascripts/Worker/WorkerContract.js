@@ -210,10 +210,48 @@ var WorkerManager = {
       return instance.getNoOfOrderedTools.call(self.address, {from: self.address});
     }).then(function(value) {
       document.getElementById("noOfOrderedTools").innerHTML = value.valueOf()
+      if (value.valueOf() > 0) {
+        for (var i = 0; i < value.valueOf(); i++) {
+          self.getBorrowedToolsData(i);
+        }
+
+      } else {
+        $("#listTable").remove();
+      }
     }).catch(function(e) {
       console.log(e);
       alertUser("danger", '<strong>Error!</strong> Could not get the number of ordered tools. Check logs!')
     });
+  },
+
+  getBorrowedToolsData: function(item) {
+    var self = this;
+
+    Worker.deployed()
+      .then(function(instance) {
+        return instance.getBorrowedToolsData.call(item, {from: self.address});
+      })
+      .then(function(value) {
+        if(value[3]) {
+          $("#BorrowedTableBody").append(
+            '<tr> <td>' + value[0] + '</td> <td>' + value[1] + '</td><td ><i class="fa fa-external-link text-warning" aria-hidden="true"></i> Checked out</td></tr>'
+          );
+        } else {
+          $("#OrderTableBody").append(
+            '<tr> <td>' + value[0] + '</td> <td>' + value[1] + '</td> <td ><i class="fa fa-archive text-info" aria-hidden="true"></i> In Box</td>  </tr>'
+          );
+        }
+
+      })
+      .catch(function(e) {
+        console.log(e);
+        alertUser(
+          "danger",
+          "<strong>Error!</strong> Could not get the number of available tools. Check logs!"
+        );
+      });
+
+
   },
 
 }

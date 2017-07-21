@@ -71,7 +71,10 @@ class InventoryManager extends React.Component {
 
   render() {
     return (
-      <ul className="nav nav-pills flex-column text-left bordered rounded">
+      <div>
+          <h5 id="balance">
+          </h5>
+        <ul className="nav nav-pills flex-column text-left bordered rounded mt-3">
         <li className="nav-item">
           <a className={"nav-link "+ this.isActive("inventoryList")} id="inventoryList" onClick={this.handleClick} >
             Tools in Inventory
@@ -92,7 +95,7 @@ class InventoryManager extends React.Component {
           Remove tool
         </a>
       </li>
-    </ul>
+    </ul></div>
     );
   }
 }

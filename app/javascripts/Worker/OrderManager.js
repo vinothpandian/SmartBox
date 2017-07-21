@@ -88,7 +88,7 @@ class OrderManager extends React.Component {
         <ul className="nav nav-pills flex-column text-left bordered rounded">
           <li className="nav-item">
             <a className={"nav-link "+ this.isActive("borrowedToolsList")} id="borrowedToolsList" onClick={this.handleClick} >
-              Borrowed Tools
+              Leased Tools
             </a>
           </li>
           <li className="nav-item">

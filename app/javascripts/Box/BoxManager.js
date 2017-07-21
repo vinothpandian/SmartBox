@@ -35,24 +35,6 @@ class BoxManager extends React.Component {
           document.getElementById("toolForm")
         );
         break;
-      // case "addTool":
-      //   ReactDOM.render(
-      //     <AddTool />,
-      //     document.getElementById("toolForm")
-      //   );
-      //   break;
-      // case "addScannedTools":
-      //   ReactDOM.render(
-      //     <AddScannedTools />,
-      //     document.getElementById("toolForm")
-      //   );
-      //   break;
-      // case "removeTool":
-      //   ReactDOM.render(
-      //     <RemoveTool />,
-      //     document.getElementById("toolForm")
-      //   );
-      //   break;
     }
   }
 
@@ -66,13 +48,16 @@ class BoxManager extends React.Component {
 
   render() {
     return (
-      <ul className="nav nav-pills flex-column text-left bordered rounded">
+      <div>
+        <h5 id="balance">
+        </h5>
+        <ul className="nav nav-pills flex-column text-left bordered rounded mt-3">
         <li className="nav-item">
           <a className={"nav-link "+ this.isActive("inventoryList")} id="inventoryList" onClick={this.handleClick} >
             Tools in Box
           </a>
         </li>
-    </ul>
+    </ul></div>
     );
   }
 }

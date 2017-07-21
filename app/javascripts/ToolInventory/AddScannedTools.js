@@ -11,13 +11,14 @@ class AddScannedTools extends React.Component {
     event.preventDefault()
     ToolManager.start()
     var scannedToolsName = document.getElementById("scannedToolsName").value
+    var scannedToolsPrice = document.getElementById("scannedToolsPrice").value
     var listOfTools = $('#toolList').val();
-    if (!scannedToolsName || !listOfTools || scannedToolsName=="" || listOfTools=="") {
-      alert("Please fill the Tool name and choose at least one Tool address")
+    if (!scannedToolsName || !listOfTools || !scannedToolsPrice || scannedToolsName=="" || listOfTools=="" ||  scannedToolsPrice=="" ) {
+      alert("Please fill the Tool name, price and choose at least one Tool address")
     }
     else {
       for (var i = 0; i < listOfTools.length; i++) {
-        ToolManager.addTool(scannedToolsName,listOfTools[i])
+        ToolManager.addTool(scannedToolsName,listOfTools[i], scannedToolsPrice )
       }
     }
   }
@@ -48,6 +49,16 @@ class AddScannedTools extends React.Component {
                 className="form-control"
                 id="scannedToolsName"
                 placeholder="eg. Screws (5mm)"
+              />
+            </div>
+            <div className="form-group">
+              <label>Price of each tool</label>
+              <input
+                type="number"
+                min="0"
+                className="form-control"
+                id="scannedToolsPrice"
+                placeholder="eg. 100"
               />
             </div>
             <div className="form-group">

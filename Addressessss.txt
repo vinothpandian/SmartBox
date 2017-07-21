@@ -9,3 +9,15 @@ Worker.deployed().then(function(i){w=i})
 ,
 
 0xa44135f05cd3c29b7fb331e7d251176fcec6d225620def793c6f395c2816fdda
+
+
+<table className="table table-bordered mt-5" id="listTable" data-sort-name="tool-name" data-sort-order="asc">
+  <thead >
+    <tr>
+      <th className="text-center" data-field="tool-name" data-sortable="true">Tool name</th>
+      <th className="text-center">Tool Address</th>
+    </tr>
+  </thead>
+  <tbody id="TableBody">
+  </tbody>
+</table>
