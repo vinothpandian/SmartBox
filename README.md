@@ -1,6 +1,6 @@
 # Smart Replenishment Box
 ## Loaded with the power of Blockchain
-### Create for Blockchain lab - Fraunhofer FIT
+### Created for Blockchain lab - Fraunhofer FIT
 
 Webpack project with Truffle. Includes contracts, migrations, tests, user interface and webpack build pipeline.
 
