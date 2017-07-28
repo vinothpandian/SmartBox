@@ -4,7 +4,7 @@ const Worker = require('./WorkerContract');
 class OrderTool extends React.Component {
 
   getRFID() {
-    fetch("http://localhost:8080/rfid").then((resp) => resp.json()).then(function(data) {
+    fetch("http://10.223.116.20:5000/rfid/").then((resp) => resp.json()).then(function(data) {
       document.getElementById("toolAddress").value = web3.sha3(data[data.length-1].cardUID)
     });
   }

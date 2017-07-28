@@ -1,6 +1,6 @@
-webpackJsonp([2],{
+webpackJsonp([1],{
 
-/***/ 111:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -13,7 +13,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 (function(global, factory) {
     'use strict';
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(19)], __WEBPACK_AMD_DEFINE_RESULT__ = function($) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(6)], __WEBPACK_AMD_DEFINE_RESULT__ = function($) {
           return factory($, global, global.document, global.Math);
         }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -3133,39 +3133,43 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ 447:
+/***/ 448:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {
 
-var _logo = __webpack_require__(448);
+var _logo = __webpack_require__(449);
 
 var _logo2 = _interopRequireDefault(_logo);
 
-var _down = __webpack_require__(449);
+var _down = __webpack_require__(450);
 
 var _down2 = _interopRequireDefault(_down);
 
-var _tools = __webpack_require__(450);
+var _tools = __webpack_require__(451);
 
 var _tools2 = _interopRequireDefault(_tools);
 
-var _worker = __webpack_require__(451);
+var _worker = __webpack_require__(452);
 
 var _worker2 = _interopRequireDefault(_worker);
 
-var _background = __webpack_require__(452);
+var _background = __webpack_require__(453);
 
 var _background2 = _interopRequireDefault(_background);
 
+var _background_v = __webpack_require__(454);
+
+var _background_v2 = _interopRequireDefault(_background_v);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-__webpack_require__(111);
+__webpack_require__(112);
 
 
-var LogoImg = document.getElementById('logo');
-LogoImg.src = _logo2.default;
+// var LogoImg = document.getElementById('logo');
+// LogoImg.src = logo
 
 var DownImg = document.getElementById('down');
 DownImg.src = _down2.default;
@@ -3186,45 +3190,55 @@ $(document).ready(function () {
   });
 });
 
-$('body').css('background-image', 'url(' + _background2.default + ')');
+$('#firstPage').css('background-image', 'linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(100, 100, 100, 0.25) 100%), url(' + _background2.default + ')');
+$('#firstPage').css('background-size', 'cover');
+
+$('body').css('background-image', 'linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.35)), url(' + _background_v2.default + ')');
 $('body').css('background-size', 'cover');
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
-
-/***/ }),
-
-/***/ 448:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "images/11074a201782ad98c362614de5d5b514-logo.png";
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
 
 /***/ 449:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "images/cc1008e869fac0186fa10e786bd74767-down.png";
+module.exports = __webpack_require__.p + "images/11074a201782ad98c362614de5d5b514-logo.png";
 
 /***/ }),
 
 /***/ 450:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "images/49808a0367fec9a17f6e45b014806f44-tools.png";
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QcVFBgBKhi6WQAACilJREFUeNrt2bFKXEEUx+HZBEXfKQ8hWElIo02yYAobmxRbpEkRiyxoFbtgJfgQvoQghKQILCFVihUlTKptgqJN4P7P/b7+Noe582M4k957AwCyPTMCABB0AEDQAQBBBwAEHQAEHQAQdABA0AEAQQcAQQcABB0AEHQAQNABQNABAEEHAAQdABB0ABB0AEDQAQBBBwAEHQAEHQAQdABA0AEAQQcAQQcABB0AEHQAQNABQNABAEEHAAQdABB0ABB0AEDQAQBBBwAEHQAEHQAQdABA0AEAQQcAQQcABB0AEHQAQNABAEEHAEEHAAQdABB0AEDQAUDQAQBBBwAEHQAQdAAQdABA0AEAQQcABB0ABB0AEHQAQNABAEEHAEEHAAQdABB0AEDQAUDQAQBBBwAEHQAQdAAQdABA0AEAQQcABB0ABB0AEHQAQNABAEEHAEEHAAQdABB0AEDQAUDQAQBBBwAEHQAQdAAQdCMAAEEHAAQdABB0AEDQAUDQAQBBBwAEHQAQdAAQdABA0AEAQQcABB0ABB0AEHQAQNABAEEHAEEHAAQdABB0AEDQAUDQAQBBBwAEHQAQdAAQdABA0AEAQQcABB0ABB0AEHQAQNABAEEHAEEHAAQdABB0AEDQAUDQAQBBBwAEHQAQdAAQdABA0AEAQQcABB0AEHQAEHQAQNABAEEHAAQdAAQdABB0AEDQAQBBBwBBBwAEHQAQdABA0AFA0AEAQQcABB0AEHQAEHQAQNABAEEHAAQdAAQdABB0AEDQAQBBBwBBBwAEHQAQdABA0AFA0AEAQQcABB0AEHQAEHQAQNABAEEHAAQdAAQdABB0AEDQAQBBBwBBNwIAEHQAQNABAEEHAAQdAAQdABB0AEDQAQBBBwBBBwAEHQAQdIBwi5+/uykg6Aze8uauff32y4UF97i6XvTt1x/b23df/CMIOsOO+c503l8dzNvV9cKFBf/EfO/wpF2ez9qn9y9FHUFn2DG/OD1ol+eztnd4IupwT8xXRB1BZ9AxXxF1eDjmoo6gExFzUYfHYy7qCDoRMRd1xPzxmIs6gk5EzEUdMZ89+RtRR9AZdMxFHTF/OlFH0Bl0zEUdMRd1BJ0iMRd1xFzUEXSKxFzUEXNRR9ApEnNRR8xFHUGnSMxFHTEXdQSdIjEXdcRc1BF0isRc1BFzUUfQKRJzUUfMRR1Bp0jMRR0xF3UEnSIxF3XEXNQRdIrEXNQRc1FH0CkSc1FHzEUdQadIzEUdMRd1BJ0iMRd1xFzUEXSKxFzUEXNRR9ApEnNRR8xFHUGnSMxFHTEXdQSdIjEXdcRc1BF0isRc1BFzUUfQxbxIzEUdMRd1BF3MixF1xFzUEXQxF3XEvHzMRV3QEXNRR8xFHUFHzEUdMRd1BB0xF3XEXNQRdDEfZ8xFHTF/uu8/Fu329o9DIegg6oh5qq3do3Z2vD9ZX3/uYAg6Q7W5sdbOjvcnW7tHoi7qiPmDMd/cWHMwBB1RF3XEXMwRdERd1BFzMUfQEXVRR8zFHEEXdVEXdTEXcwQdURd1xFzMEXREXdQRczFH0BF1UUfMxRxBR9RFXczFHEFH1EUdMRdzBB1RF3XEXMwRdERd1BFzMUfQEXVRF3MxR9ARdVFHzMUcQUfURR0xF3MEHVEXdcRczBF0RF3UxVzMEXREXdRFXczFHEFH1EUdMRdzBB1RF3UxF3MxR9ARdVEXczFH0EHURV3MxRxBR9RFHTEXcwQdURd1MRdzMUfQEXVRF3MxR9BB1EVdzMUcQUfURR0xF3MEHVEXdTEXcxB0RF3UxVzMEXQQdVEXczFH0BF1URd1MRdzBB1RF3UxF3MQdERd1MVczBF0EHVRF3MxR9BB1EVdzMUcQUfURV3MxRwEHVEXdTEXcxB0RF3UxVzMEXQQdVEXczFH0BF1Ua8UdTEXcwQdURd1MRdzEHREXdTFXMxB0BF1URdzMUfQQdTHGnUxF3MEHUQ9POpiLuYIOoh6eNTFXMwRdBD18KiLuZgj6CDq4VEXczFH0EHUw6Mu5mKOoIOoh0ddzMUcQQdRD4+6mIs5gg6iHh51MRdzBB1EPTzqYi7mCDqIenjUxVzMEXQQ9fCoi7mYI+gg6uFRF3MxR9BB1MOjLuZijqCDqIdHXczFHEEHUQ+PupiLOYIOoh4edTEXcwQdRD086mIu5gg6iHp41MVczBF0EPXwqIu5mCPoIOrhURdzMae2Se/dFChleXPXdqbzfnF6MPpZvNietc8f3rTWWhNzMUfQQdTDo756tYu5mCPoIOqIOQyYHTpl2akj5gg6iDpiDoIOoo6Yg6CDqCPmIOgg6mIu5gg6iDpiDoIOoo6Yg6CDqCPmIOgg6mIOgg6ijpiDoIOoI+Yg6CDqiDkIOoi6mIOgA6Iu5iDoIOqIOQg6iDpiDoIOoi7mgKCDqIs5CDqIOmIOgg6ijpiDoIOoizkg6CDqYg6CDqIu6mIOgg6ijpiDoIOoizkg6CDqYg6CDoi6mIOgg6gj5iDoIOpiDgg6iLqYg6ADoi7mIOgg6mIu5iDoIOpiDgg6iLqYg6ADoi7mIOgg6iOMupiDoIOoizkg6CDqYg6CDoi6mIOgA2ONupiDoIOoizkg6CDqYg4IOoi6mIOgA2ONupiDoAPhURdzEHQgPOpiDoIOhEddzEHQgfCoizkIOhAedTEHQQfCoy7mIOhAeNTFHAQdCI+6mIOgA+FRF3MQdCA86mIOgg6ER13MQdCB8KiLOQg6EB51MQdBB8KjLuYg6EB41MUcBB0Ij7qYg6AD4VEXcxB0IDzqYg6CDoRHXcxB0IHwqIs51DbpvZsCFLW8uWs703lvrYk5CDqQHvXVqx0QdABgwOzQAUDQAQBBBwAEHQAQdAAQdABA0AEAQQcABB0ABB0AEHQAQNABAEEHAEEHAAQdABB0AEDQAUDQAQBBBwAEHQAQdAAQdABA0AEAQQcABB0ABB0AEHQAQNABAEEHAEEHAAQdABB0AEDQAUDQAQBBBwAEHQAQdAAQdABA0AEAQQcABB0ABB0AEHQAQNABAEEHAAQdAAQdABB0AEDQAQBBBwBBBwAEHQAQdABA0AFA0AEAQQcABB0AEHQAEHQAQNABAEEHAAQdAAQdABB0AEDQAQBBBwBBBwAEHQAQdABA0AFA0AEAQQcABB0AEHQAEHQAQNABAEEHAAQdAAQdABB0AEDQAQBBBwBBBwAEHQAQdABA0AEAQQcAQQcABB0AEHQAQNABQNABAEEHAAQdABB0ABB0AEDQAQBBBwAEHQAEHQAQdABA0AEAQQcAQQcABB0AEHQAQNABQNABAEEHAAQdABB0ABB0AEDQAQBBBwAEHQAEHQAQdABA0AEAQQcAQQcABB0AEHQAQNABQNABAEEHAAQdABB0ABB0AEDQAQBBBwAEHQAQdAAQdABA0AEAQQcABB0ABB0AEHQAQNABAEEHAEEHAAQdABB0AEDQAUDQAQBBBwD+n7+/+SQJiZ3nQwAAAABJRU5ErkJggg=="
 
 /***/ }),
 
 /***/ 451:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "images/741dff6743b63fc43e2569c23bbe70c0-worker.png";
+module.exports = __webpack_require__.p + "images/49808a0367fec9a17f6e45b014806f44-tools.png";
 
 /***/ }),
 
 /***/ 452:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "images/0d29ffa472e35fca75700e805f33dfe8-background.jpg";
+module.exports = __webpack_require__.p + "images/741dff6743b63fc43e2569c23bbe70c0-worker.png";
+
+/***/ }),
+
+/***/ 453:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/5806a585665c8397ba0d06aa1c311052-background.jpg";
+
+/***/ }),
+
+/***/ 454:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/069c9af143a03c4bd79ae15c6c262560-background_v1.jpg";
 
 /***/ })
 
-},[447]);
+},[448]);

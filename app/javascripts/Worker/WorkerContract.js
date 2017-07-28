@@ -232,15 +232,20 @@ var WorkerManager = {
         return instance.getBorrowedToolsData.call(item, {from: self.address});
       })
       .then(function(value) {
+        var temp;
         if(value[3]) {
           $("#BorrowedTableBody").append(
             '<tr> <td>' + value[0] + '</td> <td>' + value[1] + '</td><td ><i class="fa fa-external-link text-warning" aria-hidden="true"></i> Checked out</td></tr>'
           );
+          temp = '<i class="fa fa-external-link text-warning" aria-hidden="true"></i> In use'
         } else {
-          $("#OrderTableBody").append(
-            '<tr> <td>' + value[0] + '</td> <td>' + value[1] + '</td> <td ><i class="fa fa-archive text-info" aria-hidden="true"></i> In Box</td>  </tr>'
-          );
+          temp = '<i class="fa fa-archive text-info" aria-hidden="true"></i> In Box'
         }
+
+          $("#OrderTableBody").append(
+            '<tr> <td>' + value[0] + '</td> <td>' + value[1] + '</td> <td >'+ temp + '</td>  </tr>'
+          );
+
 
       })
       .catch(function(e) {

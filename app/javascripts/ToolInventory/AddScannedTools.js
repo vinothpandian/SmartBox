@@ -26,7 +26,7 @@ class AddScannedTools extends React.Component {
   componentDidMount() {
     $("#alertUser").hide();
 
-    fetch("http://localhost:8080/rfid").then((resp) => resp.json()).then(function(data) {
+    fetch("http://10.223.116.20:5000/rfid/").then((resp) => resp.json()).then(function(data) {
       for (var i = 0; i < data.length; i++) {
         var temp = web3.sha3(data[i].cardUID)
         $('#toolList').append(new Option("Tool Address: "+temp, temp))

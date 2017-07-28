@@ -21,7 +21,7 @@ module.exports = {
         inline: true,
         contentBase: path.join(__dirname, 'dist'),
         host: '0.0.0.0',
-        port: 8000,
+        port: 8001,
         disableHostCheck: true,
     },
     plugins: [// Use template of our app's index.html and generate new index.html in the build folder.
