@@ -76,6 +76,10 @@ contract Worker {
 
   function returnTool(address toolSupplier, address toolAddress)
   isWorkerAssignedToABox(){
+    if(borrowedTools[toolAddress].available) {
+      putToolInBox(toolAddress);
+    }
+    
     box.returnTool(toolSupplier, toolAddress);
 
     uint toolID = borrowedTools[toolAddress].toolID;
