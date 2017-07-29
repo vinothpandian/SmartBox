@@ -6,6 +6,6 @@ Webpack project with Truffle. Includes contracts, migrations, tests, user interf
 
 ## Usage
 
-1. First run `truffle compile`, then run `truffle migrate` to deploy the contracts. (Set it in truffle.js file if needed)
+1. First run `truffle compile`, then run `truffle migrate` to deploy the contracts. (Set node RPC in truffle.js file if needed)
 2. Do an `npm install` to install the dependencies
-3. Then run `npm run dev` to build the app and serve it on http://localhost:8000
+3. Then run `npm run dev` to build the app and serve it on http://localhost:8001
