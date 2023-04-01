@@ -43,7 +43,7 @@
     "bootstrap": "^4.0.0-alpha.6",
     "clipboard": "^1.7.1",
     "fullpage.js": "^2.9.4",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "tablesort": "^5.0.1"
